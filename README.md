@@ -1,6 +1,6 @@
 # nullpacket-charts
 
-[![](https://github.com/thurcombe/nullpacket-charts/workflows/Release%20Charts/badge.svg?branch=master)](https://github.com/thurcombe/nullpacket-charts/actions)
+[![](https://github.com/thurcombe/nullpacket-charts/workflows/Release%20Charts/badge.svg?branch=main)](https://github.com/thurcombe/nullpacket-charts/actions)
 
 ## Usage
 
