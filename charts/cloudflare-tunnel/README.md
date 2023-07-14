@@ -1,3 +1,4 @@
+[![version](https://img.shields.io/badge/version-1.0.1-green.svg)](https://semver.org) ![ci](https://github.com/conventional-changelog/standard-version/workflows/ci/badge.svg)
 # cloudflare-tunnel
 
 This helm chart install cloudflared in tunnel mode. 
