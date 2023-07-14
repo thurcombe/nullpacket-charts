@@ -1,4 +1,5 @@
-[![version](https://img.shields.io/badge/version-1.0.1-green.svg)](https://semver.org) ![ci](https://github.com/conventional-changelog/standard-version/workflows/ci/badge.svg)
+![Dynamic YAML Badge](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2Fthurcombe%2Fnullpacket-charts%2Fgh-pages%2Findex.yaml&query=%24.entries%5B%22cloudflare-tunnel%22%5D%5B0%5D.version&label=latest%20release&link=https%3A%2F%2Fgithub.com%2Fthurcombe%2Fnullpacket-charts%2Freleases)
+
 # cloudflare-tunnel
 
 This helm chart install cloudflared in tunnel mode. 
