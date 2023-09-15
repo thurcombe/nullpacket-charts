@@ -3,4 +3,4 @@ name: cloudflare-tunnel
 description: A Helm chart to deploy a cloudflared tunnel
 type: application
 version: 1.0.7
-appVersion: "2023.8.0"
+appVersion: "2023.8.2"
