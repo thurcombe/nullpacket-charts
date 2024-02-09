@@ -3,6 +3,16 @@ entries:
   cloudflare-tunnel:
   - apiVersion: v2
     appVersion: 2024.2.0
+    created: "2024-02-09T14:56:56.776099899Z"
+    description: A Helm chart to deploy a cloudflared tunnel
+    digest: 8a3cf78ad34bf0fc178be4656229e63b16baa0a3ab5eef59a676e4dd3bba1291
+    name: cloudflare-tunnel
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.11/cloudflare-tunnel-1.0.11.tgz
+    version: 1.0.11
+  - apiVersion: v2
+    appVersion: 2024.2.0
     created: "2024-02-09T11:31:02.169966978Z"
     description: A Helm chart to deploy a cloudflared tunnel
     digest: 79d07b698857fd5a2b9ffabe0f1b4b1c5a8cf85d0ccfcafc8e4b380bb586797d
@@ -81,4 +91,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.3/cloudflare-tunnel-1.0.3.tgz
     version: 1.0.3
-generated: "2024-02-09T11:31:02.170007695Z"
+generated: "2024-02-09T14:56:56.776154279Z"
