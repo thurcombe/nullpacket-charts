@@ -53,7 +53,10 @@ spec:
                   name: {{ .Values.tunnel.tokenSecretRef.name}}
                   key: {{ .Values.tunnel.tokenSecretRef.key}}
                   {{ end }}
-
+            {{- if .Values.metrics.enabled }}
+            - name: TUNNEL_METRICS
+              value: "{{ .Values.metrics.bind_address }}:{{ .Values.metrics.port}}"
+            {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
