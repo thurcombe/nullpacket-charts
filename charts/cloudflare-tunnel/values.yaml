@@ -15,7 +15,6 @@ nameOverride: ""
 fullnameOverride: ""
 
 tunnel:
-
   # provide the token for the tunnel, if you prefer to create/use an exsting
   # secret, set create to false and specify the tokenSecretRef below
   token:
@@ -30,6 +29,11 @@ tunnel:
 
   # protocol quic required for UDP
   protocol: quic
+
+metrics:
+  enabled: false
+  port: 60123
+  bind_address: 0.0.0.0
 
 serviceAccount:
   # Specifies whether a service account should be created
