@@ -1,0 +1,16 @@
+{{- if .Values.metrics.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: metrics-service
+  labels:
+    app.kubernetes.io/name: cloudflare-tunnel
+spec:
+  selector:
+    app.kubernetes.io/name: cloudflare-tunnel
+  ports:
+    - name: metrics
+      protocol: TCP
+      port: {{ .Values.metrics.port }}
+      targetPort: metrics
+{{- end }}

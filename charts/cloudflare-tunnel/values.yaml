@@ -34,6 +34,9 @@ metrics:
   enabled: false
   port: 60123
   bind_address: 0.0.0.0
+  prometheus_label:
+    key: "release"
+    value: "promstack"
 
 serviceAccount:
   # Specifies whether a service account should be created

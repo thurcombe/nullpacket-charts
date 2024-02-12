@@ -56,6 +56,10 @@ spec:
             {{- if .Values.metrics.enabled }}
             - name: TUNNEL_METRICS
               value: "{{ .Values.metrics.bind_address }}:{{ .Values.metrics.port}}"
+          ports:
+            - containerPort: {{ .Values.metrics.port }}
+              name: metrics
+              protocol: TCP
             {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:

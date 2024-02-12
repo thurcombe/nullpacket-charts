@@ -35,7 +35,19 @@ helm upgrade --install \
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+|image.repository|str|cloudflare/cloudflared|The cloudflared image to use|
+|image.tag|str|chart app version|The image tag to deploy|
+|image.pullPolicy|strIfNotPresent|The image pull policy to use|
 |tunnel.token.create|bool|`true`|Create a secret for the tunnel from `token.value`|
 |tunnel.token.value|str|-|The tunnel token string provided by cloudflare|
 |tunnel.tokenSecretRef.name|str|`none`|The name of an existing tunnel token secret|
 |tunnel.tokenSecretRef.key|str|`none`|The key to look for in the tunnel token secret|
+|tunnel.protocol|str|quic|The tunnel protocol to use|
+|metrics.enabled|bool|false|Denotes if metric service should be enabled|
+|metrics.port|integer|60123|The port number the metrics server should listen on|
+|metrics.bind_address|str|0.0.0.0|The IP address to bind the metrics server to|
+|metrics.prometheus_label.key|str|release|The key for the prometheus label required for scraping|
+|metrics.prometheus_label.value|str|promstack|The value for the prometheus label required for scraping|
+
+
+
