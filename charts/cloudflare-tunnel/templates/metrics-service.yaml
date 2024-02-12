@@ -4,10 +4,10 @@ kind: Service
 metadata:
   name: metrics-service
   labels:
-    app.kubernetes.io/name: cloudflare-tunnel
+    app.kubernetes.io/name: {{ include "cloudfare-tunnel.fullname" . }}
 spec:
   selector:
-    app.kubernetes.io/name: cloudflare-tunnel
+    app.kubernetes.io/name: {{ include "cloudfare-tunnel.fullname" . }}
   ports:
     - name: metrics
       protocol: TCP
