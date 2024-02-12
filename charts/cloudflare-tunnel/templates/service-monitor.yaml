@@ -14,7 +14,7 @@ spec:
     port: metrics
   namespaceSelector:
     matchNames:
-    - cloudflare-tunnel
+    - {{ include "cloudfare-tunnel.fullname" . }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: cloudflare-tunnel
+      app.kubernetes.io/name: {{ include "cloudfare-tunnel.fullname" . }}
