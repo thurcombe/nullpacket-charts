@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - main
+    - th-qip
 
 jobs:
   release:
