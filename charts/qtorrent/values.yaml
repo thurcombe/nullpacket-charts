@@ -94,10 +94,10 @@ persistence:
 #      storageClassName: ""
 #      size: 50G
   volumeMounts: []
-    - name: config
-      mountPath: "/config"
-    - name: downloads
-      mountPath: "/downloads"
+#    - name: config
+#      mountPath: "/config"
+#    - name: downloads
+#      mountPath: "/downloads"
 
 vpn:
   enabled: true
