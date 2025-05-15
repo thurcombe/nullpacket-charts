@@ -94,6 +94,16 @@ entries:
   qtorrent:
   - apiVersion: v2
     appVersion: 5.1.0
+    created: "2025-05-15T11:36:10.923869942Z"
+    description: deplyo qtorrent, optionally with gluetun sidecar
+    digest: d21c5ab81b2f0d653f319df309d4592f74df83306a0efb79872771f142a908d2
+    name: qtorrent
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.4/qtorrent-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 5.1.0
     created: "2025-05-15T10:21:52.244926972Z"
     description: deplyo qtorrent, optionally with gluetun sidecar
     digest: 5ccb9c982f297c800f0a2d0126f0257a890a50676ce8fbd985e806fb56ae4c96
@@ -132,4 +142,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.0/qtorrent-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-15T10:21:52.24516022Z"
+generated: "2025-05-15T11:36:10.92390647Z"
