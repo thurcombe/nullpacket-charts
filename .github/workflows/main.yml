@@ -4,7 +4,7 @@ on:
   push:
     branches:
     - main
-    - th-qip
+    - qtorrent-qip
 
 jobs:
   release:
