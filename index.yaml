@@ -91,4 +91,15 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.3/cloudflare-tunnel-1.0.3.tgz
     version: 1.0.3
-generated: "2024-02-09T14:56:56.776154279Z"
+  qtorrent:
+  - apiVersion: v2
+    appVersion: 5.1.0
+    created: "2025-05-15T09:49:21.889691284Z"
+    description: deplyo qtorrent, optionally with gluetun sidecar
+    digest: 8950842f0189b560658374bde858eaf2404e45a2ba57bd1cca28fb8dacbbe71b
+    name: qtorrent
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.0/qtorrent-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-15T09:49:21.889714457Z"
