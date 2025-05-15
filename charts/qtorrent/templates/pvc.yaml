@@ -1,0 +1,18 @@
+{{- if .Values.persistence.enabled }}
+{{- range concat .Values.persistence.volumes .Values.vpn.volumes }}
+{{- if not .existingClaimName }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ required "claimName is required" .claimName }}
+spec:
+  accessModes:
+    - {{ required "accessMode is required" .accessMode }}
+  resources:
+    requests:
+      storage: {{ required "zise is required" .size }}
+  storageClassName: {{ .storageClassName }}
+---
+{{- end }}
+{{- end }}
+{{- end }}
