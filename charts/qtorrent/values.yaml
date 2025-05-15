@@ -80,19 +80,14 @@ readinessProbe:
     port: http
 
 persistence:
-  enabled: true
+  enabled: false
   volumes: []
-#    - name: config
+#    - name: qtorrent-config
 #      existingClaimName: qtorrent-config
-#    - name: downloads
-#      existingClaimName: qtorrent-dl
-#    - name: config
-#      claimName: qtorrent-config
-#      size: 1G
-#      storageClassName: ""
-#    - name: downloads
-#      storageClassName: ""
+#    - name: qtorrent-dl
 #      size: 50G
+#       storageClassName: "nfs-client"
+#       accessMode: "ReadWriteMany"
   volumeMounts: []
 #    - name: config
 #      mountPath: "/config"
@@ -100,7 +95,7 @@ persistence:
 #      mountPath: "/downloads"
 
 vpn:
-  enabled: true
+  enabled: false
   credentials:
     secretName: "vpn-password"
     # password: ""
@@ -114,7 +109,12 @@ vpn:
 #    - name: OPENVPN_USER
 #      value: ""
 #    - name: SERVER_COUNTRIES
-#      value: "UK"
+#      value: ""
+#    - name: OPENVPN_PASSWORD
+#      valueFrom:
+#        secretKeyRef: vpn-password
+#        key: "password"
+
   securityContext:
     capabilities: 
       add:
