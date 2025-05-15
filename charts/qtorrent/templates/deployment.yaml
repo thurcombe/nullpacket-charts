@@ -5,9 +5,7 @@ metadata:
   labels:
     {{- include "qtorrent.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "qtorrent.selectorLabels" . | nindent 6 }}
@@ -37,22 +35,51 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
+            - name: {{ .Values.service.portName | default "http" }}
               containerPort: {{ .Values.service.port }}
-              protocol: TCP
+              protocol: {{ .Values.service.protocol | default "TCP" }}
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
+          {{- if .Values.persistence.enabled}}
+          volumeMounts:
+            {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
+          {{- end }}
+          env:
+          {{- with .Values.env }}
+            {{- toYaml . | nindent 12 }}
+          {{- end}}
+        {{- if .Values.vpn.enabled }}
+        - name: vpn
+          image: "{{ .Values.vpn.image.repository }}:{{ .Values.vpn.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.vpn.image.pullPolicy | default "IfNotPresent" }}
+          securityContext:
+            {{- toYaml .Values.vpn.securityContext | nindent 12 }}
+          env:
+          {{- with .Values.vpn.env }}
+            {{- toYaml . | nindent 12 }}
+          {{- end}}
+          {{- if .Values.persistence.enabled}}
+          {{- with .Values.vpn.volumeMounts }}
           volumeMounts:
             {{- toYaml . | nindent 12 }}
           {{- end }}
-      {{- with .Values.volumes }}
+          {{- end }}
+          {{- with .Values.vpn.resources }}
+          resources:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+        {{- end }}
+      {{- if .Values.persistence.enabled}}
       volumes:
-        {{- toYaml . | nindent 8 }}
+      {{- range concat .Values.persistence.volumes .Values.vpn.volumes }}
+        - name: {{ .name }}
+          persistentVolumeClaim:
+            claimName: {{ .claimName | or .existingClaimName | required "One of claimName or existingClaimName must be defined" }}
+      {{- end }}
       {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:

@@ -39,7 +39,13 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 8080
+
+env:
+  - name: PUID
+    value: "1057"
+  - name: PGID
+    value: "1056"
 
 ingress:
   enabled: false
@@ -73,23 +79,66 @@ readinessProbe:
     path: /
     port: http
 
-# Additional volumes on the output Deployment definition.
-volumes: [] 
-#  - name: config
-#    claimName: qtorrent-config
-#    size: 1G
-#    storageClassName: ""
-#  - name: downloads
-#    storageClassName: ""
-#    size: 50G
+persistence:
+  enabled: true
+  volumes: []
+#    - name: config
+#      existingClaimName: qtorrent-config
+#    - name: downloads
+#      existingClaimName: qtorrent-dl
+#    - name: config
+#      claimName: qtorrent-config
+#      size: 1G
+#      storageClassName: ""
+#    - name: downloads
+#      storageClassName: ""
+#      size: 50G
+  volumeMounts: []
+    - name: config
+      mountPath: "/config"
+    - name: downloads
+      mountPath: "/downloads"
 
-# Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-#  - name: config
-#    mountPath: "/config"
+vpn:
+  enabled: true
+  credentials:
+    secretName: "vpn-password"
+    # password: ""
+  image:
+    repository: qmcgaw/gluetun
+    tag: latest
+    imagePullPolicy: IfNotPresent
+  env: [] # configure your VPN here, see https://github.com/qdm12/gluetun
+#    - name: VPN_SERVICE_PROVIDER
+#      value: "nordvpn"
+#    - name: OPENVPN_USER
+#      value: ""
+#    - name: SERVER_COUNTRIES
+#      value: "UK"
+  securityContext:
+    capabilities: 
+      add:
+        - NET_ADMIN
+  volumes: []
+#    - name: config
+#      claimName: gluetun-config
+#      size: 250M
+#      storageClassName: ""
+#      accessMode: ReadWriteOnce
+  volumeMounts: []
+#    - name: config
+#      mountpath: /gluetun
 
 nodeSelector: {}
 
 tolerations: []
 
 affinity: {}
+
+
+
+
+
+
+
+ 
