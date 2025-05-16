@@ -1,9 +1,9 @@
-# Default values for qtorrent.
+# Default values for qbittorrent.
 
 replicaCount: 1
 
 image:
-  repository: linuxserver/qtorrent
+  repository: linuxserver/qbittorrent
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -82,9 +82,9 @@ readinessProbe:
 persistence:
   enabled: false
   volumes: []
-#    - name: qtorrent-config
-#      existingClaimName: qtorrent-config
-#    - name: qtorrent-dl
+#    - name: qbittorrent-config
+#      existingClaimName: qbittorrent-config
+#    - name: qbittorrent-dl
 #      size: 50G
 #       storageClassName: "nfs-client"
 #       accessMode: "ReadWriteMany"

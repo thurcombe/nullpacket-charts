@@ -1,6 +1,0 @@
-apiVersion: v2
-name: qtorrent
-description: deplyo qtorrent, optionally with gluetun sidecar
-type: application
-version: 0.1.5
-appVersion: "5.1.0"

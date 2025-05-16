@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "qtorrent.fullname" . }}
+  name: {{ include "qbittorrent.fullname" . }}
   labels:
-    {{- include "qtorrent.labels" . | nindent 4 }}
+    {{- include "qbittorrent.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "qtorrent.selectorLabels" . | nindent 4 }}
+    {{- include "qbittorrent.selectorLabels" . | nindent 4 }}

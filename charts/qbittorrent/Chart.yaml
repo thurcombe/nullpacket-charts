@@ -1,0 +1,6 @@
+apiVersion: v2
+name: qbittorrent
+description: deploy qbittorrent, optionally with gluetun sidecar
+type: application
+version: 0.1.1
+appVersion: "5.1.0"
