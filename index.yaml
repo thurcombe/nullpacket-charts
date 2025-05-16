@@ -91,6 +91,17 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.3/cloudflare-tunnel-1.0.3.tgz
     version: 1.0.3
+  qbittorrent:
+  - apiVersion: v2
+    appVersion: 5.1.0
+    created: "2025-05-16T14:48:08.541263037Z"
+    description: deploy qbittorrent, optionally with gluetun sidecar
+    digest: 8e58681b8420b75296cb57b6ccdfb8fe77a3b54b7d4f2fbe3f5ba5a2f9ad5224
+    name: qbittorrent
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/qbittorrent-0.1.1/qbittorrent-0.1.1.tgz
+    version: 0.1.1
   qtorrent:
   - apiVersion: v2
     appVersion: 5.1.0
@@ -152,4 +163,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.0/qtorrent-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-16T10:43:50.617738625Z"
+generated: "2025-05-16T14:48:08.541303613Z"
