@@ -166,6 +166,16 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.14
+    created: "2025-05-20T08:29:48.864030207Z"
+    description: A Helm chart for Kubernetes
+    digest: f13b894361d98531e8ae9893a65a9716d8a6f8ac5f3bf8b16aedd8c5ecdfc3b8
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.3/sonarr-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 4.0.14
     created: "2025-05-20T08:21:05.120194291Z"
     description: A Helm chart for Kubernetes
     digest: 24b480b22a451bbb1d5ee687c95b7b3c0497726bb37b3f2baddef1b5c70f74ee
@@ -194,4 +204,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-20T08:21:05.120242671Z"
+generated: "2025-05-20T08:29:48.864078077Z"
