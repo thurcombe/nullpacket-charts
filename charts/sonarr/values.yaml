@@ -27,7 +27,14 @@ serviceAccount:
 
 podAnnotations: {}
 podLabels: {}
-
+env: []
+env:
+#  - name: PUID
+#    value: "5000"
+#  - name: PGID
+#    value: "5000"
+#  - name: TZ
+#    value: "Europe/London"
 podSecurityContext: {}
   # fsGroup: 2000
 
