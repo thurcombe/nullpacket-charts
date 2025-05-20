@@ -93,6 +93,16 @@ entries:
     version: 1.0.3
   jackett:
   - apiVersion: v2
+    appVersion: 0.22.1021
+    created: "2025-05-20T14:30:14.594310358Z"
+    description: A Helm chart for Kubernetes
+    digest: b4b95511948fd65938e1e3050fb10cba4022cdd82f8fd5dc5d42280d14ce0542
+    name: jackett
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/jackett-0.1.2/jackett-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
     appVersion: 0.22.1930
     created: "2025-05-20T13:16:16.425971432Z"
     description: A Helm chart for Kubernetes
@@ -246,4 +256,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-20T13:16:16.426023369Z"
+generated: "2025-05-20T14:30:14.59435968Z"
