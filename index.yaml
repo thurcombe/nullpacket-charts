@@ -163,4 +163,15 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.0/qtorrent-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-16T14:48:08.541303613Z"
+  sonarr:
+  - apiVersion: v2
+    appVersion: 4.0.14
+    created: "2025-05-20T07:43:19.031152237Z"
+    description: A Helm chart for Kubernetes
+    digest: 17afdb3b875c8fea51037b5338110be965086273217ad0d5fd42915d8e992149
+    name: sonarr
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-20T07:43:19.031189466Z"
