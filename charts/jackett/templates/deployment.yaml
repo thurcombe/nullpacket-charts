@@ -46,13 +46,17 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
+          {{- if .Values.persistence.enabled }}
           volumeMounts:
-            {{- toYaml . | nindent 12 }}
+            {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
           {{- end }}
-      {{- with .Values.volumes }}
+      {{- if .Values.persistence.enabled }}
       volumes:
-        {{- toYaml . | nindent 8 }}
+      {{- range .Values.persistence.volumes }}
+        - name: {{ .name }}
+          persistentVolumeClaim:
+            claimName: {{ .existingClaimName | or .name | required "One of name or existingClaimName must be defined" }}
+      {{- end }}
       {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
