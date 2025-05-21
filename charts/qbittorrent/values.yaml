@@ -1,0 +1,144 @@
+# Default values for qbittorrent.
+
+replicaCount: 1
+
+image:
+  repository: linuxserver/qbittorrent
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 8080
+
+env:
+  - name: PUID
+    value: "1057"
+  - name: PGID
+    value: "1056"
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: traefik
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+persistence:
+  enabled: false
+  volumes: []
+#    - name: qbittorrent-config
+#      existingClaimName: qbittorrent-config
+#    - name: qbittorrent-dl
+#      size: 50G
+#       storageClassName: "nfs-client"
+#       accessMode: "ReadWriteMany"
+  volumeMounts: []
+#    - name: config
+#      mountPath: "/config"
+#    - name: downloads
+#      mountPath: "/downloads"
+
+vpn:
+  enabled: false
+  credentials:
+    secretName: "vpn-password"
+    # password: ""
+  image:
+    repository: qmcgaw/gluetun
+    tag: latest
+    imagePullPolicy: IfNotPresent
+  env: [] # configure your VPN here, see https://github.com/qdm12/gluetun
+#    - name: VPN_SERVICE_PROVIDER
+#      value: "nordvpn"
+#    - name: OPENVPN_USER
+#      value: ""
+#    - name: SERVER_COUNTRIES
+#      value: ""
+#    - name: OPENVPN_PASSWORD
+#      valueFrom:
+#        secretKeyRef: vpn-password
+#        key: "password"
+
+  securityContext:
+    capabilities: 
+      add:
+        - NET_ADMIN
+  volumes: []
+#    - name: config
+#      claimName: gluetun-config
+#      size: 250M
+#      storageClassName: ""
+#      accessMode: ReadWriteOnce
+  volumeMounts: []
+#    - name: config
+#      mountpath: /gluetun
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+
+
+
+
+
+
+ 
