@@ -6,6 +6,8 @@ metadata:
     {{- include "qbittorrent.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       {{- include "qbittorrent.selectorLabels" . | nindent 6 }}
