@@ -166,6 +166,16 @@ entries:
   prowlarr:
   - apiVersion: v2
     appVersion: 1.35.1
+    created: "2025-05-21T15:33:54.612999513Z"
+    description: A Helm chart for Kubernetes
+    digest: 98341bceaf39aaa5f3e79e539c707c9d1a88e24b6b63aa64dbf0818fc11b8102
+    name: prowlarr
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/prowlarr-0.1.1/prowlarr-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.35.1
     created: "2025-05-21T15:23:22.200190904Z"
     description: A Helm chart for Kubernetes
     digest: 7ff55c42c837be6764f566d4594f15574bca9c7c9ed81d8c9cff3a62a440044b
@@ -307,4 +317,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-21T15:23:22.200262558Z"
+generated: "2025-05-21T15:33:54.613055317Z"
