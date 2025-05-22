@@ -269,6 +269,16 @@ entries:
   sabnzbd:
   - apiVersion: v2
     appVersion: 4.5.1
+    created: "2025-05-22T21:09:04.876504879Z"
+    description: A Helm chart for Kubernetes
+    digest: ab5ae9469590aa0d4c0fd7c2d1c6ebcc801b9e5a3350f87860f4eb6cd93b89ab
+    name: sabnzbd
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.5/sabnzbd-0.1.5.tgz
+    version: 0.1.5
+  - apiVersion: v2
+    appVersion: 4.5.1
     created: "2025-05-22T20:53:59.537612504Z"
     description: A Helm chart for Kubernetes
     digest: 9ad538327e99e8cb78e53b8ec6674641d82252eaf53b85e4caf256f36134429a
@@ -368,4 +378,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-22T20:53:59.537687984Z"
+generated: "2025-05-22T21:09:04.87658013Z"
