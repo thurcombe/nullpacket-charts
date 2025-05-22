@@ -50,7 +50,7 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{- with .Values.volumeMounts }}
+          {{- if .Values.persistence.enabled }}
           volumeMounts:
             {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
           {{- end }}
