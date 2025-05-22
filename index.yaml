@@ -266,6 +266,17 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.0/qtorrent-0.1.0.tgz
     version: 0.1.0
+  sabnzbd:
+  - apiVersion: v2
+    appVersion: 4.5.1
+    created: "2025-05-22T08:12:54.276903989Z"
+    description: A Helm chart for Kubernetes
+    digest: c754c9fa110dd9b8787c4de5ab22c5001d07de3bf1b44f6a2424059ab8236404
+    name: sabnzbd
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.0/sabnzbd-0.1.0.tgz
+    version: 0.1.0
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.14
@@ -317,4 +328,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-21T15:33:54.613055317Z"
+generated: "2025-05-22T08:12:54.27695859Z"
