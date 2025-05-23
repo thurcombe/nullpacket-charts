@@ -306,6 +306,17 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.0/qtorrent-0.1.0.tgz
     version: 0.1.0
+  radarr:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-05-23T12:50:19.34659966Z"
+    description: A Helm chart for Kubernetes
+    digest: df16e9cd9b89cfa36d1150bedf1d93c0de74fc8932d52803c81209b52608bf73
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.0/radarr-0.1.0.tgz
+    version: 0.1.0
   sabnzbd:
   - apiVersion: v2
     appVersion: 4.5.1
@@ -438,4 +449,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-23T08:28:49.003599132Z"
+generated: "2025-05-23T12:50:19.3466856Z"
