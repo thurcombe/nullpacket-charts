@@ -59,7 +59,7 @@ spec:
       {{- range .Values.persistence.volumes }}
         - name: {{ .name }}
           persistentVolumeClaim:
-            claimName: {{ .existingClaimName | or .name | required "One of name or existingClaimName must be defined" }}
+            claimName: {{ .existingClaimName | default .name | required "One of name or existingClaimName must be defined" }}
       {{- end }}
       {{- end }}
       {{- with .Values.nodeSelector }}
