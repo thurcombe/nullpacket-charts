@@ -90,18 +90,21 @@ autoscaling:
 # Additional volumes on the output Deployment definition.
 persistence:
   enabled: false
-  volumes: []
-#    - name: radarr-config
-#      size: 250M
-#      storageClassName: "zfs"
-#      accessMode: "ReadWriteOnce"
-#    - name: qbittorrent-dl
-#      existingClaimName: qbittorrent-dl
-  volumeMounts: []
-#    - name: config
-#      mountPath: "/config"
-#    - name: downloads
-#      mountPath: "/downloads"
+    volumes: []
+#      - name: downloads
+#        existingClaimName: downloads
+#      - name: radarr-config
+#        size: 250M
+#        accessMode: "ReadWriteOnce"
+#      - name: movies
+#        existingClaimName: movies
+    volumeMounts: []
+#      - name: downloads
+#        mountPath: /downloads
+#      - name: radarr-config
+#        mountPath: /config
+#      - name: movies
+#        mountPath: /movies
 
 nodeSelector: {}
 
