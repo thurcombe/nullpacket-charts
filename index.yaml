@@ -319,6 +319,16 @@ entries:
   radarr:
   - apiVersion: v2
     appVersion: 5.23.3
+    created: "2025-05-30T07:11:25.904020624Z"
+    description: A Helm chart for Kubernetes
+    digest: d116866ffa9ac62de56bddcc906386f9da84485563d7168363b38889f0c36257
+    name: radarr
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.6/radarr-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 5.23.3
     created: "2025-05-24T22:36:27.036423196Z"
     description: A Helm chart for Kubernetes
     digest: 1657b80929f887c56008169bfcd7d5d08ac5e347d54497e2e163d637a9542e70
@@ -509,4 +519,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-24T22:36:27.036530707Z"
+generated: "2025-05-30T07:11:25.904128577Z"
