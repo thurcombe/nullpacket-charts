@@ -51,6 +51,10 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- if .Values.persistence.enabled }}
+          volumeMounts:
+            {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
+          {{- end }}
+      {{- if .Values.persistence.enabled }}
       volumes:
       {{- range .Values.persistence.volumes }}
         - name: {{ .name }}
