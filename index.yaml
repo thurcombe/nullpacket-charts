@@ -183,6 +183,17 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyfin-0.1.0/jellyfin-0.1.0.tgz
     version: 0.1.0
+  jellyseer:
+  - apiVersion: v2
+    appVersion: 2.5.2
+    created: "2025-06-04T13:34:37.474644697Z"
+    description: A Helm chart for Kubernetes
+    digest: 9cd59beb397cf2c680548b317df59ec1f03b0b62013b0fcfee6a4db61aeb6d8c
+    name: jellyseer
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyseer-0.1.0/jellyseer-0.1.0.tgz
+    version: 0.1.0
   prowlarr:
   - apiVersion: v2
     appVersion: 1.35.1
@@ -519,4 +530,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-30T07:11:25.904128577Z"
+generated: "2025-06-04T13:34:37.474734495Z"
