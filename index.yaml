@@ -186,6 +186,16 @@ entries:
   jellyseer:
   - apiVersion: v2
     appVersion: 2.5.2
+    created: "2025-06-04T15:11:52.359282056Z"
+    description: A Helm chart for Kubernetes
+    digest: 7fe90f0a0a749501e5f1bc35e855f70156cefa8aa33ec17698cd55720b2fc5d0
+    name: jellyseer
+    type: application
+    urls:
+    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyseer-0.1.2/jellyseer-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 2.5.2
     created: "2025-06-04T14:56:59.141503982Z"
     description: A Helm chart for Kubernetes
     digest: 49286ee8066ad8e596ed9b4f36fa334d91b9a159ea0076a33bbd83f67a77eb6b
@@ -540,4 +550,4 @@ entries:
     urls:
     - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
     version: 0.1.0
-generated: "2025-06-04T14:56:59.141626081Z"
+generated: "2025-06-04T15:11:52.359419112Z"
