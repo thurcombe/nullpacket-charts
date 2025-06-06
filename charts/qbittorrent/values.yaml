@@ -96,25 +96,23 @@ persistence:
 
 vpn:
   enabled: false
-  credentials:
-    secretName: "vpn-password"
-    # password: ""
+  # configure your VPN here, see https://github.com/qdm12/gluetun
+  # then add the provider, protocol and relevant credentials.openvpn or credentials.wireguard
+  provider:
+    name: nordvpn
+    protocol: openvpn
+    credentials: {}
+    #  openvpn:
+    #    username: "REDACTED"
+    #    password: "REDACTED"
+    #  wireguard:
+    #    privatekey: "REDACTED"
+    #    addresses: "REDACTED"
   image:
     repository: qmcgaw/gluetun
     tag: latest
     imagePullPolicy: IfNotPresent
-  env: [] # configure your VPN here, see https://github.com/qdm12/gluetun
-#    - name: VPN_SERVICE_PROVIDER
-#      value: "nordvpn"
-#    - name: OPENVPN_USER
-#      value: ""
-#    - name: SERVER_COUNTRIES
-#      value: ""
-#    - name: OPENVPN_PASSWORD
-#      valueFrom:
-#        secretKeyRef: vpn-password
-#        key: "password"
-
+  env: [] 
   securityContext:
     capabilities: 
       add:

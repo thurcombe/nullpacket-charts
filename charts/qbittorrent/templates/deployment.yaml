@@ -64,9 +64,11 @@ spec:
           {{- with .Values.vpn.env }}
             {{- toYaml . | nindent 12 }}
           {{- end}}
+            - name: VPN_SERVICE_PROVIDER
+              value: {{ .Values.vpn.provider }}
           envFrom:
             - secretRef:
-                name: {{ .Values.vpn.credentials.secretName }}
+                name: vpn-credentials
           {{- if .Values.persistence.enabled}}
           {{- with .Values.vpn.volumeMounts }}
           volumeMounts:
