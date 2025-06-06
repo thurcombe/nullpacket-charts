@@ -25,12 +25,11 @@ jobs:
       uses: azure/setup-helm@v3
 
     - name: Determine Chart Version
-      id: chart_version
       run: |
         if [[ $GITHUB_REF == "refs/heads/main" ]]; then
-          echo "::set-output name=chart_version::$(git describe --tags --abbrev=0)"
+          echo "chart_version=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
         else
-          echo "::set-output name=chart_version::$(git describe --tags --abbrev=0)-wip-$(date +%Y%m%d%H%M%S)"
+          echo "chart_version=$(git describe --tags --abbrev=0)-wip-$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
         fi
 
     - name: Run chart-releaser
@@ -38,4 +37,6 @@ jobs:
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        CHART_VERSION: ${{ steps.chart_version.outputs.chart_version }}
+        CHART_VERSION: ${{ env.chart_version }}
+      with:
+        args: --skip-existing
