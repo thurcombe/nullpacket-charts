@@ -26,7 +26,7 @@ jobs:
 
     - name: Determine Chart Version
       run: |
-        if [[ $GITHUB_REF == "refs/heads/main" ]]; then
+        if [[ $GITHUB_REF == *"main"* ]]; then
           echo "chart_version=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
         else
           echo "chart_version=$(git describe --tags --abbrev=0)-wip-$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
@@ -38,3 +38,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CHART_VERSION: ${{ env.chart_version }}
+        RELEASE_NAME_TEMPLATE: "{{ .Name }}-{{ .Version }}"
