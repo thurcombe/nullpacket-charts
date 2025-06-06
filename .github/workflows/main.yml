@@ -24,14 +24,19 @@ jobs:
     - name: Install Helm
       uses: azure/setup-helm@v3
 
-    - name: Determine Directory
-      id: dir
+    - name: Determine Path
+      id: determine-path
       run: |
         if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
-          echo "package_path=.deploy/stable" >> $GITHUB_ENV
+          echo "target_dir=stable" >> $GITHUB_ENV
         else
-          echo "package_path=.deploy/wip" >> $GITHUB_ENV
+          echo "target_dir=wip" >> $GITHUB_ENV
         fi
+
+    - name: Package Helm Charts
+      run: |
+        mkdir -p .deploy/${{ env.target_dir }}
+        helm package charts/* --destination .deploy/${{ env.target_dir }}
         
     - name: Run chart-releaser
       uses: helm/chart-releaser-action@v1.7.0
