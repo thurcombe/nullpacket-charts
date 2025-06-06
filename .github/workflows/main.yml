@@ -28,9 +28,9 @@ jobs:
       id: dir
       run: |
         if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
-          echo "dir=stable" >> $GITHUB_ENV
+          echo "package_path=.deploy/stable" >> $GITHUB_ENV
         else
-          echo "dir=wip" >> $GITHUB_ENV
+          echo "package_path=.deploy/wip" >> $GITHUB_ENV
         fi
         
     - name: Run chart-releaser
@@ -40,5 +40,5 @@ jobs:
         CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       with:
         charts_dir: charts
-        packages_dir: .deploy/packages
+        package_path: ${{ env.package_path }}
         index_dir: ${{ github.workspace }}/.deploy/${{ env.dir }}
