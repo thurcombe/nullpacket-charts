@@ -24,18 +24,17 @@ jobs:
     - name: Install Helm
       uses: azure/setup-helm@v3
 
-    - name: Update Chart.yaml
+    - name: Determine Directory
+      id: dir
       run: |
-        if [[ $GITHUB_REF == *"main"* ]]; then
-          sed -i "s/name:.*/name: qbittorrent/" charts/qbittorrent/Chart.yaml
-          sed -i "s/version:.*/version: $(git describe --tags --abbrev=0)/" charts/qbittorrent/Chart.yaml
+        if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+          echo "dir=stable" >> $GITHUB_ENV
         else
-          sed -i "s/name:.*/name: qbittorrent-wip/" charts/qbittorrent/Chart.yaml
-          sed -i "s/version:.*/version: $(git describe --tags --abbrev=0)/" charts/qbittorrent/Chart.yaml
+          echo "dir=wip" >> $GITHUB_ENV
         fi
-
+        echo "${{ github.ref }}"
     - name: Run chart-releaser
       uses: helm/chart-releaser-action@v1.5.0
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
