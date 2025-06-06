@@ -42,7 +42,8 @@ jobs:
       run: |
         git fetch origin gh-pages
         git checkout gh-pages || git checkout --orphan gh-pages
-          
+        mkdir -p ./${{ env.target_dir }}
+
         # Move packaged charts to the determined directory
         mv .deploy/${{ env.target_dir }}/*.tgz ./${{ env.target_dir }}/
 
