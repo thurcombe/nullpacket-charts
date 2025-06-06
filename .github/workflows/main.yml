@@ -7,8 +7,6 @@ on:
     - '*-wip'
 jobs:
   release:
-    # depending on default permission settings for your org (contents being read-only or read-write for workloads), you will have to add permissions
-    # see: https://docs.github.com/en/actions/security-guides/automatic-token-authentication#modifying-the-permissions-for-the-github_token
     permissions:
       contents: write
     runs-on: ubuntu-latest
@@ -26,8 +24,18 @@ jobs:
     - name: Install Helm
       uses: azure/setup-helm@v3
 
+    - name: Determine Chart Version
+      id: chart_version
+      run: |
+        if [[ $GITHUB_REF == "refs/heads/main" ]]; then
+          echo "::set-output name=chart_version::$(git describe --tags --abbrev=0)"
+        else
+          echo "::set-output name=chart_version::$(git describe --tags --abbrev=0)-wip-$(date +%Y%m%d%H%M%S)"
+        fi
+
     - name: Run chart-releaser
       uses: helm/chart-releaser-action@v1.5.0
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        CHART_VERSION: ${{ steps.chart_version.outputs.chart_version }}
