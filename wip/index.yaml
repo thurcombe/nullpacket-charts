@@ -1,0 +1,102 @@
+apiVersion: v1
+entries:
+  cloudflare-tunnel:
+  - apiVersion: v2
+    appVersion: 2024.2.0
+    created: "2025-06-06T18:25:08.655582152Z"
+    description: A Helm chart to deploy a cloudflared tunnel
+    digest: e17b6d7206ddcced5968963c30a07c72de6b900aad9158993e67e211f9ef6ad1
+    name: cloudflare-tunnel
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/cloudflare-tunnel-1.0.11.tgz
+    version: 1.0.11
+  jackett:
+  - apiVersion: v2
+    appVersion: 0.22.1021
+    created: "2025-06-06T18:25:08.656007167Z"
+    description: A Helm chart for Kubernetes
+    digest: 785a6895e83fc5f148c6953ceea532c48daf4d0b9f6bf9b3028031ca814f6a1d
+    name: jackett
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/jackett-0.1.4.tgz
+    version: 0.1.4
+  jellyfin:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-06-06T18:25:08.65639882Z"
+    description: A Helm chart for Kubernetes
+    digest: 7f56976faf7ff28d099a63b35d5aedf513dfb7038ee66b6a76292f111a25620d
+    name: jellyfin
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/jellyfin-0.1.3.tgz
+    version: 0.1.3
+  jellyseer:
+  - apiVersion: v2
+    appVersion: 2.5.2
+    created: "2025-06-06T18:25:08.656796694Z"
+    description: A Helm chart for Kubernetes
+    digest: 668a1d5544c7f52677c95b0ce64b8559907ebf422377138892fd38309f3a488f
+    name: jellyseer
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/jellyseer-0.1.2.tgz
+    version: 0.1.2
+  prowlarr:
+  - apiVersion: v2
+    appVersion: 1.35.1
+    created: "2025-06-06T18:25:08.657177587Z"
+    description: A Helm chart for Kubernetes
+    digest: 54fdd79599aa02ddd154307a62f0c6d848f410e3b76af3591d8e0ab0fb40b9c4
+    name: prowlarr
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/prowlarr-0.1.3.tgz
+    version: 0.1.3
+  qbittorrent:
+  - apiVersion: v2
+    appVersion: 5.1.0
+    created: "2025-06-06T18:25:08.657612761Z"
+    description: deploy qbittorrent, optionally with gluetun sidecar
+    digest: e7d3667aadc4a8b5b23b590076273f55e2bfc018a98ca91a6be3454ddf3d6af3
+    name: qbittorrent
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/qbittorrent-0.1.3.tgz
+    version: 0.1.3
+  radarr:
+  - apiVersion: v2
+    appVersion: 5.23.3
+    created: "2025-06-06T18:25:08.658004664Z"
+    description: A Helm chart for Kubernetes
+    digest: 24f7998f13149cb52b69337829161fb1dfaab07608bf71b27b29d9c6e56ecaf0
+    name: radarr
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/radarr-0.1.6.tgz
+    version: 0.1.6
+  sabnzbd:
+  - apiVersion: v2
+    appVersion: 4.5.1
+    created: "2025-06-06T18:25:08.658368294Z"
+    description: A Helm chart for Kubernetes
+    digest: db9b324dd2fd982994e916da391e9a4e9586f3d26210688472a796df64e9a508
+    name: sabnzbd
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/sabnzbd-0.1.6.tgz
+    version: 0.1.6
+  sonarr:
+  - apiVersion: v2
+    appVersion: 4.0.14
+    created: "2025-06-06T18:25:08.658753986Z"
+    description: A Helm chart for Kubernetes
+    digest: cf43bc17569881dfb709d9a7a4ffd01fda0af3781872dda6d1952aeffdbb6c3c
+    name: sonarr
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/wip/sonarr-0.1.5.tgz
+    version: 0.1.5
+generated: "2025-06-06T18:25:08.655129425Z"
