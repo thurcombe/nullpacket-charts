@@ -28,7 +28,7 @@ jobs:
       id: determine-path
       run: |
         if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
-          echo "target_dir=stable" >> $GITHUB_ENV
+          echo "target_dir=." >> $GITHUB_ENV
         else
           echo "target_dir=wip" >> $GITHUB_ENV
         fi
@@ -37,13 +37,18 @@ jobs:
       run: |
         mkdir -p .deploy/${{ env.target_dir }}
         helm package charts/* --destination .deploy/${{ env.target_dir }}
-        
-    - name: Run chart-releaser
-      uses: helm/chart-releaser-action@v1.7.0
-      env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      with:
-        charts_dir: charts
-        package_path: ${{ env.package_path }}
-        index_dir: ${{ github.workspace }}/.deploy/${{ env.dir }}
+
+    - name: Update gh-pages
+      run: |
+        git fetch origin gh-pages
+        git checkout gh-pages || git checkout --orphan gh-pages
+          
+        # Move packaged charts to the determined directory
+        mv .deploy/${{ env.target_dir }}/*.tgz ./${{ env.target_dir }}/
+
+        # Update the helm index in the specified directory
+        helm repo index ./${{ env.target_dir }} --url https://thurcombe.github.io/nullpacket-charts/${{ env.target_dir }}
+
+        git add ./${{ env.target_dir }}/*.tgz ./${{ env.target_dir }}/index.yaml
+        git commit -m "Update charts for ${{ github.ref }}"
+        git push origin gh-pages
