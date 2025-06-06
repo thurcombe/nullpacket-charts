@@ -24,12 +24,12 @@ jobs:
     - name: Install Helm
       uses: azure/setup-helm@v3
 
-    - name: Determine Chart Version
+    - name: Update Chart.yaml
       run: |
         if [[ $GITHUB_REF == *"main"* ]]; then
-          echo "chart_version=$(git describe --tags --abbrev=0)" >> $GITHUB_ENV
+          sed -i "s/version:.*/version: $(git describe --tags --abbrev=0)/" charts/qbittorrent/Chart.yaml
         else
-          echo "chart_version=$(git describe --tags --abbrev=0)-wip-$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
+          sed -i "s/version:.*/version: $(git describe --tags --abbrev=0)-wip/" charts/qbittorrent/Chart.yaml
         fi
 
     - name: Run chart-releaser
@@ -37,5 +37,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CHART_VERSION: ${{ env.chart_version }}
-        RELEASE_NAME_TEMPLATE: "{{ .Name }}-{{ .Version }}"
