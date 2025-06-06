@@ -38,3 +38,7 @@ jobs:
       env:
         GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      with:
+        charts_dir: charts
+        packages_dir: .deploy/packages
+        index_dir: ${{ github.workspace }}/.deploy/${{ env.dir }}
