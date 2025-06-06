@@ -27,9 +27,11 @@ jobs:
     - name: Update Chart.yaml
       run: |
         if [[ $GITHUB_REF == *"main"* ]]; then
+          sed -i "s/name:.*/name: qbittorrent/" charts/qbittorrent/Chart.yaml
           sed -i "s/version:.*/version: $(git describe --tags --abbrev=0)/" charts/qbittorrent/Chart.yaml
         else
-          sed -i "s/version:.*/version: $(git describe --tags --abbrev=0)-wip/" charts/qbittorrent/Chart.yaml
+          sed -i "s/name:.*/name: qbittorrent-wip/" charts/qbittorrent/Chart.yaml
+          sed -i "s/version:.*/version: $(git describe --tags --abbrev=0)/" charts/qbittorrent/Chart.yaml
         fi
 
     - name: Run chart-releaser
