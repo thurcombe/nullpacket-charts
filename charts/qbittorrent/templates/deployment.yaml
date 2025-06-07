@@ -52,16 +52,16 @@ spec:
         {{- end }}
         env:
         {{- if eq .Values.vpn.provider.protocol "openvpn" }}
-          - name: OPENVPN_USER
-            valueFrom:
-              secretKeyRef:
-                name: vpn-credentials
-                key: OPENVPN_USER
-          - name: OPENVPN_PASS
-            valueFrom:
-              secretKeyRef:
-                name: vpn-credentials
-                key: OPENVPN_PASS
+        - name: OPENVPN_USER
+          valueFrom:
+            secretKeyRef:
+              name: vpn-credentials
+              key: OPENVPN_USER
+        - name: OPENVPN_PASS
+          valueFrom:
+            secretKeyRef:
+              name: vpn-credentials
+              key: OPENVPN_PASS
         {{- else if eq .Values.vpn.provider.protocol "wireguard" }}
           - name: WIREGUARD_PRIVATE_KEY
             valueFrom:
