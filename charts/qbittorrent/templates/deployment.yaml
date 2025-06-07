@@ -60,19 +60,20 @@ spec:
         imagePullPolicy: {{ .Values.vpn.image.pullPolicy | default "IfNotPresent" }}
         securityContext:
           {{- toYaml .Values.vpn.securityContext | nindent 12 }}
-        env:  
+        env: 
+          {{- if eq .Values.vpn.provider.protocol "openvpn" }}
           - name: VPN_SERVICE_PROVIDER
             value: {{ .Values.vpn.provider.name }}
           - name: OPENVPN_USER
-            valueFrom:
-              secretKeyRef:
-                name: vpn-credentials
-                key: OPENVPN_USER
+            value: {{ .Values.vpn.provider.credentials.openvpn.username }}
           - name: OPENVPN_PASS
-            valueFrom:
-              secretKeyRef:
-                name: vpn-credentials
-                key: OPENVPN_PASS
+            value: {{ .Values.vpn.provider.credentials.openvpn.password }}
+          {{- else if eq .Values.vpn.provider.protocol "wireguard" }}
+          - name: WIREGUARD_PRIVATE_KEY
+            value: {{ .Values.vpn.provider.credentials.wireguard.privatekey }}
+          - name: WIREGUARD_ADDRESSES
+            value: {{ .Values.vpn.provider.credentials.wireguard.addresses }}
+          {{- end }}
         {{- with .Values.vpn.env }}
         {{- toYaml . | nindent 12 }}
         {{- end }}
