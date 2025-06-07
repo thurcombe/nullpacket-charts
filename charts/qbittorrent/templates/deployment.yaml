@@ -66,7 +66,7 @@ spec:
             value: {{ .Values.vpn.provider.name }}
           - name: OPENVPN_USER
             value: {{ .Values.vpn.provider.credentials.openvpn.username }}
-          - name: OPENVPN_PASS
+          - name: OPENVPN_PASSWORD
             value: {{ .Values.vpn.provider.credentials.openvpn.password }}
           {{- else if eq .Values.vpn.provider.protocol "wireguard" }}
           - name: WIREGUARD_PRIVATE_KEY
