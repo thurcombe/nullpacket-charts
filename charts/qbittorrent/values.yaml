@@ -112,7 +112,9 @@ vpn:
     repository: qmcgaw/gluetun
     tag: latest
     imagePullPolicy: IfNotPresent
-  env: [] 
+  env:
+    - name: DNS_ADDRESS
+      value: ""
   securityContext:
     capabilities: 
       add:
