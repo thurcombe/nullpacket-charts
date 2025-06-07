@@ -51,29 +51,6 @@ spec:
           {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
         {{- end }}
         env:
-        {{- if eq .Values.vpn.provider.protocol "openvpn" }}
-        - name: OPENVPN_USER
-          valueFrom:
-            secretKeyRef:
-              name: vpn-credentials
-              key: OPENVPN_USER
-        - name: OPENVPN_PASS
-          valueFrom:
-            secretKeyRef:
-              name: vpn-credentials
-              key: OPENVPN_PASS
-        {{- else if eq .Values.vpn.provider.protocol "wireguard" }}
-          - name: WIREGUARD_PRIVATE_KEY
-            valueFrom:
-              secretKeyRef:
-                name: vpn-credentials
-                key: WIREGUARD_PRIVATE_KEY
-          - name: WIREGUARD_ADDRESSES
-            valueFrom:
-              secretKeyRef:
-                name: vpn-credentials
-                key: WIREGUARD_ADDRESSES
-        {{- end }}
         {{- with .Values.env }}
         {{- toYaml . | nindent 12 }}
         {{- end }}
@@ -83,15 +60,22 @@ spec:
         imagePullPolicy: {{ .Values.vpn.image.pullPolicy | default "IfNotPresent" }}
         securityContext:
           {{- toYaml .Values.vpn.securityContext | nindent 12 }}
-        env:
-        - name: VPN_SERVICE_PROVIDER
-          value: {{ .Values.vpn.provider.name }}
+        env:  
+          - name: VPN_SERVICE_PROVIDER
+            value: {{ .Values.vpn.provider.name }}
+          - name: OPENVPN_USER
+            valueFrom:
+              secretKeyRef:
+                name: vpn-credentials
+                key: OPENVPN_USER
+          - name: OPENVPN_PASS
+            valueFrom:
+              secretKeyRef:
+                name: vpn-credentials
+                key: OPENVPN_PASS
         {{- with .Values.vpn.env }}
         {{- toYaml . | nindent 12 }}
         {{- end }}
-        envFrom:
-        - secretRef:
-            name: vpn-credentials
         {{- if .Values.persistence.enabled }}
         {{- with .Values.vpn.volumeMounts }}
         volumeMounts:
