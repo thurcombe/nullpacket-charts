@@ -61,11 +61,11 @@ spec:
           securityContext:
             {{- toYaml .Values.vpn.securityContext | nindent 12 }}
           env:
+            - name: VPN_SERVICE_PROVIDER
+              value: {{ .Values.vpn.provider.name }}
           {{- with .Values.vpn.env }}
             {{- toYaml . | nindent 12 }}
           {{- end}}
-            - name: VPN_SERVICE_PROVIDER
-              value: {{ .Values.vpn.provider.name }}
           envFrom:
             - secretRef:
                 name: vpn-credentials
