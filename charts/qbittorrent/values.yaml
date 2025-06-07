@@ -101,10 +101,10 @@ vpn:
   provider:
     name: nordvpn
     protocol: openvpn
-    credentials: {}
-    #  openvpn:
-    #    username: "REDACTED"
-    #    password: "REDACTED"
+    credentials: 
+      openvpn:
+        username: "REDACTED"
+        password: "REDACTED"
     #  wireguard:
     #    privatekey: "REDACTED"
     #    addresses: "REDACTED"
