@@ -114,7 +114,7 @@ vpn:
     imagePullPolicy: IfNotPresent
   env:
     - name: DNS_ADDRESS
-      value: ""
+      value: "1.1.1.1"
   securityContext:
     capabilities: 
       add:
