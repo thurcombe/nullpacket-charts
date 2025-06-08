@@ -75,7 +75,7 @@ spec:
             value: {{ .Values.vpn.provider.credentials.wireguard.addresses }}
           {{- end }}
         {{- with .Values.vpn.env }}
-        {{- toYaml . | nindent 12 }}
+        {{- toYaml . | nindent 10 }}
         {{- end }}
         {{- if .Values.persistence.enabled }}
         {{- with .Values.vpn.volumeMounts }}
