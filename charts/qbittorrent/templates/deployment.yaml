@@ -89,7 +89,8 @@ spec:
         {{- toYaml . | nindent 10 }}
         {{- end }}
         envFrom:
-          secretRef: vpn-credentials
+          - secretRef:
+              name: vpn-credentials
         {{- if .Values.persistence.enabled }}
         {{- with .Values.vpn.volumeMounts }}
         volumeMounts:
