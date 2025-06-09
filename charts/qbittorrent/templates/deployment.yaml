@@ -67,7 +67,7 @@ spec:
         {{- end }}
         envFrom:
           - secretRef:
-              name: {{ secretName }}
+              name: {{ $secretName }}
         {{- if .Values.persistence.enabled }}
         {{- with .Values.vpn.volumeMounts }}
         volumeMounts:
