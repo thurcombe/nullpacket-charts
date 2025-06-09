@@ -1,3 +1,4 @@
+{{- $secretName := .Values.vpn.provider.credentials.existingSecretName | default "vpn-credentials" -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -63,10 +64,20 @@ spec:
         env: 
           {{- if eq .Values.vpn.provider.protocol "openvpn" }}
           - name: VPN_SERVICE_PROVIDER
-            value: {{ .Values.vpn.provider.name }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ $secretName }}
+                key: VPN_SERVICE_PROVIDER
           - name: OPENVPN_USER
-            value: {{ .Values.vpn.provider.credentials.openvpn.username }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ $secretName }}
+                key: OPENVPN_USER
           - name: OPENVPN_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ $secretName }}
+                key: OPENVPN_PASSWORD
             value: {{ .Values.vpn.provider.credentials.openvpn.password }}
           {{- else if eq .Values.vpn.provider.protocol "wireguard" }}
           - name: WIREGUARD_PRIVATE_KEY
@@ -77,6 +88,8 @@ spec:
         {{- with .Values.vpn.env }}
         {{- toYaml . | nindent 10 }}
         {{- end }}
+        envFrom:
+          secretRef: vpn-credentials
         {{- if .Values.persistence.enabled }}
         {{- with .Values.vpn.volumeMounts }}
         volumeMounts:
