@@ -67,7 +67,7 @@ spec:
         {{- end }}
         envFrom:
           - secretRef:
-              name: vpn-credentials
+              name: {{ secretName }}
         {{- if .Values.persistence.enabled }}
         {{- with .Values.vpn.volumeMounts }}
         volumeMounts:
