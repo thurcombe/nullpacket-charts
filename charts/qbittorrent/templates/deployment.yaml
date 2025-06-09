@@ -62,29 +62,6 @@ spec:
         securityContext:
           {{- toYaml .Values.vpn.securityContext | nindent 12 }}
         env: 
-          {{- if eq .Values.vpn.provider.protocol "openvpn" }}
-          - name: VPN_SERVICE_PROVIDER
-            valueFrom:
-              secretKeyRef:
-                name: {{ $secretName }}
-                key: VPN_SERVICE_PROVIDER
-          - name: OPENVPN_USER
-            valueFrom:
-              secretKeyRef:
-                name: {{ $secretName }}
-                key: OPENVPN_USER
-          - name: OPENVPN_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: {{ $secretName }}
-                key: OPENVPN_PASSWORD
-            value: {{ .Values.vpn.provider.credentials.openvpn.password }}
-          {{- else if eq .Values.vpn.provider.protocol "wireguard" }}
-          - name: WIREGUARD_PRIVATE_KEY
-            value: {{ .Values.vpn.provider.credentials.wireguard.privatekey }}
-          - name: WIREGUARD_ADDRESSES
-            value: {{ .Values.vpn.provider.credentials.wireguard.addresses }}
-          {{- end }}
         {{- with .Values.vpn.env }}
         {{- toYaml . | nindent 10 }}
         {{- end }}
