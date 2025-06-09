@@ -51,9 +51,6 @@ spec:
         volumeMounts:
           {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
         {{- end }}
-        envFrom:
-          - secretRef:
-              name: vpn-credentials
         env:
         {{- with .Values.env }}
         {{- toYaml . | nindent 12 }}
