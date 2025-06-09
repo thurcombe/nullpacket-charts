@@ -3,9 +3,9 @@ entries:
   cloudflare-tunnel:
   - apiVersion: v2
     appVersion: 2024.2.0
-    created: "2025-06-09T12:06:10.249010224Z"
+    created: "2025-06-09T12:18:04.876793098Z"
     description: A Helm chart to deploy a cloudflared tunnel
-    digest: dbf228ce1529807216341475a368c3e22d2b979cf6c980ab8cc15fafddf0f9ac
+    digest: 2f04a6b7bceb30e014f4e7ec7f2f0838e5a315a15c3948b34d41f8e13dff712e
     name: cloudflare-tunnel
     type: application
     urls:
@@ -14,9 +14,9 @@ entries:
   jackett:
   - apiVersion: v2
     appVersion: 0.22.1021
-    created: "2025-06-09T12:06:10.249458703Z"
+    created: "2025-06-09T12:18:04.877243843Z"
     description: A Helm chart for Kubernetes
-    digest: 08e492bdf138e807b483238d14528f9446ed9fba1c134dc5570ef80bae607a14
+    digest: e007befd4f80d4f11270f07736a3ed175ad66b9f6d637da1e567643b55a43af2
     name: jackett
     type: application
     urls:
@@ -25,9 +25,9 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-06-09T12:06:10.249855837Z"
+    created: "2025-06-09T12:18:04.877636799Z"
     description: A Helm chart for Kubernetes
-    digest: bbd1e1f7727f384d1c434133a9d3411cfef549a17b6761a2ced0a1451e4f7aed
+    digest: aef1dc61b4098e34aa6c250f5ae161d991ac821366cb47d150c258b497d686d3
     name: jellyfin
     type: application
     urls:
@@ -36,9 +36,9 @@ entries:
   jellyseer:
   - apiVersion: v2
     appVersion: 2.5.2
-    created: "2025-06-09T12:06:10.250255384Z"
+    created: "2025-06-09T12:18:04.87803203Z"
     description: A Helm chart for Kubernetes
-    digest: 8b90174e4f8dda0200a0d2b6b8f07f078a64ee56db627dfbce2d2a6476e8075a
+    digest: 4b1b992b3aa7721bad0ed7f795c81c6dd866eed6ee3f29b8b0ddc86063654109
     name: jellyseer
     type: application
     urls:
@@ -47,9 +47,9 @@ entries:
   prowlarr:
   - apiVersion: v2
     appVersion: 1.35.1
-    created: "2025-06-09T12:06:10.250629986Z"
+    created: "2025-06-09T12:18:04.878404388Z"
     description: A Helm chart for Kubernetes
-    digest: 89537bb075b53d315c6e3f90a0b935e33fc70ae6ec8b7100af6b8fe5b81b944c
+    digest: 3f724495d65a3ff500415f9cc8a2154fb93038441c67444b6e6aeacca6fe7835
     name: prowlarr
     type: application
     urls:
@@ -58,9 +58,9 @@ entries:
   qbittorrent:
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-06-09T12:06:10.251052927Z"
+    created: "2025-06-09T12:18:04.878817943Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
-    digest: 7d38119ec1c929a07991e3323d50d29ebecf82a41374b49fcb5ec36cc3491a98
+    digest: 50be4c0d0522d35425f23f5493996a877e9f30283a25ba12feef234144cc6226
     name: qbittorrent
     type: application
     urls:
@@ -69,9 +69,9 @@ entries:
   radarr:
   - apiVersion: v2
     appVersion: 5.23.3
-    created: "2025-06-09T12:06:10.251445392Z"
+    created: "2025-06-09T12:18:04.87922166Z"
     description: A Helm chart for Kubernetes
-    digest: 3c331ca1695a9c505eeac3bfed683b158857813e0650d490f87c70c38fea215d
+    digest: c1a4b92cc29801a2a4126643d56b46cf5e1fdc8daf401676a1442325fcb116f3
     name: radarr
     type: application
     urls:
@@ -80,9 +80,9 @@ entries:
   sabnzbd:
   - apiVersion: v2
     appVersion: 4.5.1
-    created: "2025-06-09T12:06:10.252012302Z"
+    created: "2025-06-09T12:18:04.879588047Z"
     description: A Helm chart for Kubernetes
-    digest: a739208b0d7b6b3ee54ae95c31dd07af5535da0e01528d2fd404a07ff76b0280
+    digest: 669a2ab380925dfa806cb7db40a5072956d7f08663dbcc62cb94edd53d5842b0
     name: sabnzbd
     type: application
     urls:
@@ -91,12 +91,12 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.14
-    created: "2025-06-09T12:06:10.252403705Z"
+    created: "2025-06-09T12:18:04.87998977Z"
     description: A Helm chart for Kubernetes
-    digest: 71bca5caf58f08dfa6f2d9b0251b6e6d917d93bc88506cabfa55f182ccdd4224
+    digest: a038814f6a8695798a533c3bc455bf5d9a757ca4ca46aed7b11e57f82354bf5c
     name: sonarr
     type: application
     urls:
     - https://thurcombe.github.io/nullpacket-charts/wip/sonarr-0.1.5.tgz
     version: 0.1.5
-generated: "2025-06-09T12:06:10.248566794Z"
+generated: "2025-06-09T12:18:04.876338927Z"
