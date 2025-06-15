@@ -68,7 +68,6 @@ spec:
         envFrom:
           - secretRef:
               name: {{ $secretName }}
-        envFrom:
           - configMapRef:
               name: vpn-config
         {{- if .Values.persistence.enabled }}
