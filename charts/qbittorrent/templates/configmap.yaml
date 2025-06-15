@@ -3,11 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: vpn-config
-  labels:
-    app.kubernetes.io/name: {{ include "your-chart.name" . }}
-    helm.sh/chart: {{ include "your-chart.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+  labels: {}
 data:
   vpn_type: {{ .Values.vpn.provider.protocol }}
 {{- with .Values.vpn.provider.configuration }}
