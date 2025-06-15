@@ -101,20 +101,38 @@ vpn:
   provider:
     name: nordvpn
     protocol: openvpn
-    credentials: 
+    credentials:
+#      existingSecretName: "vpn-secret"
       openvpn:
         username: "REDACTED"
         password: "REDACTED"
-    #  wireguard:
-    #    privatekey: "REDACTED"
-    #    addresses: "REDACTED"
+#      wireguard:
+#        privatekey: "REDACTED"
+#        addresses: "REDACTED"
+    configuration: {}
+#      # comma separated list of countries
+#      server_countries: ""
+#      # comma separated list of regions
+#      server_regions: ""
+#      # comma separated list of cities
+#      server_cities: ""
+#      # comma separated list of hostnames
+#      #server_hostnames: ""
+#      # filter only free tier 
+#      free_only: off
+#      # filter only port forward enabled servers
+#      port_forward_only: off
+#      # custom ovpn server endpoint port
+#      openvpn_endpoint_port: 1194
+#      # enable port forwarding
+#      vpn_port_forwarding: off
   image:
     repository: qmcgaw/gluetun
     tag: latest
     imagePullPolicy: IfNotPresent
-  env:
-    - name: DNS_ADDRESS
-      value: "1.1.1.1"
+  env: []
+#    - name: DNS_ADDRESS
+#      value: 1.1.1.1
   securityContext:
     capabilities: 
       add:
