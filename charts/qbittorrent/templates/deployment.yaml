@@ -1,3 +1,4 @@
+{{- $secretName := .Values.vpn.provider.credentials.existingSecretName | default "vpn-credentials" -}}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -31,59 +32,66 @@ spec:
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
-        - name: {{ .Chart.Name }}
-          securityContext:
-            {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - name: {{ .Values.service.portName | default "http" }}
-              containerPort: {{ .Values.service.port }}
-              protocol: {{ .Values.service.protocol | default "TCP" }}
-          livenessProbe:
-            {{- toYaml .Values.livenessProbe | nindent 12 }}
-          readinessProbe:
-            {{- toYaml .Values.readinessProbe | nindent 12 }}
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-          {{- if .Values.persistence.enabled}}
-          volumeMounts:
-            {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
-          {{- end }}
-          env:
-          {{- with .Values.env }}
-            {{- toYaml . | nindent 12 }}
-          {{- end}}
-        {{- if .Values.vpn.enabled }}
-        - name: vpn
-          image: "{{ .Values.vpn.image.repository }}:{{ .Values.vpn.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.vpn.image.pullPolicy | default "IfNotPresent" }}
-          securityContext:
-            {{- toYaml .Values.vpn.securityContext | nindent 12 }}
-          env:
-          {{- with .Values.vpn.env }}
-            {{- toYaml . | nindent 12 }}
-          {{- end}}
-          envFrom:
-            - secretRef:
-                name: {{ .Values.vpn.credentials.secretName }}
-          {{- if .Values.persistence.enabled}}
-          {{- with .Values.vpn.volumeMounts }}
-          volumeMounts:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
-          {{- end }}
-          {{- with .Values.vpn.resources }}
-          resources:
-            {{- toYaml . | nindent 12 }}
-          {{- end }}
+      - name: {{ .Chart.Name }}
+        securityContext:
+          {{- toYaml .Values.securityContext | nindent 12 }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - name: {{ .Values.service.portName | default "http" }}
+          containerPort: {{ .Values.service.port }}
+          protocol: {{ .Values.service.protocol | default "TCP" }}
+        livenessProbe:
+          {{- toYaml .Values.livenessProbe | nindent 12 }}
+        readinessProbe:
+          {{- toYaml .Values.readinessProbe | nindent 12 }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        {{- if .Values.persistence.enabled }}
+        volumeMounts:
+          {{- toYaml .Values.persistence.volumeMounts | nindent 12 }}
         {{- end }}
-      {{- if .Values.persistence.enabled}}
+        env:
+        {{- with .Values.env }}
+        {{- toYaml . | nindent 12 }}
+        {{- end }}
+      {{- if .Values.vpn.enabled }}
+      - name: vpn
+        image: "{{ .Values.vpn.image.repository }}:{{ .Values.vpn.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.vpn.image.pullPolicy | default "IfNotPresent" }}
+        securityContext:
+          {{- toYaml .Values.vpn.securityContext | nindent 12 }}
+        env: 
+        {{- with .Values.vpn.env }}
+        {{- toYaml . | nindent 10 }}
+        {{- end }}
+        envFrom:
+          - secretRef:
+              name: {{ $secretName }}
+          - configMapRef:
+              name: vpn-config
+        {{- if .Values.persistence.enabled }}
+        {{- with .Values.vpn.volumeMounts }}
+        volumeMounts:
+          {{- toYaml . | nindent 12 }}
+        {{- end }}
+        {{- end }}
+        {{- with .Values.vpn.resources }}
+        resources:
+          {{- toYaml . | nindent 12 }}
+        {{- end }}
+      {{- end }}
+      {{- if .Values.persistence.enabled }}
       volumes:
-      {{- range concat .Values.persistence.volumes .Values.vpn.volumes }}
-        - name: {{ .name }}
-          persistentVolumeClaim:
-            claimName: {{ .existingClaimName | default .name | required "One of name or existingClaimName must be defined" }}
+      {{- range .Values.persistence.volumes }}
+      - name: {{ .name }}
+        persistentVolumeClaim:
+          claimName: {{ .existingClaimName | default .name | required "One of name or existingClaimName must be defined" }}
+      {{- end }}
+      {{- range .Values.vpn.volumes }}
+      - name: {{ .name }}
+        persistentVolumeClaim:
+          claimName: {{ .existingClaimName | default .name | required "One of name or existingClaimName must be defined" }}
       {{- end }}
       {{- end }}
       {{- with .Values.nodeSelector }}
