@@ -53,3 +53,4 @@ jobs:
         git add ./${{ env.target_dir }}/*.tgz ./${{ env.target_dir }}/index.yaml
         git commit -m "Update charts for ${{ github.ref }}"
         git push origin gh-pages
+
