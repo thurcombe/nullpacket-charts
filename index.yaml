@@ -3,551 +3,220 @@ entries:
   cloudflare-tunnel:
   - apiVersion: v2
     appVersion: 2024.2.0
-    created: "2024-02-09T14:56:56.776099899Z"
+    created: "2025-06-16T07:29:10.32939003Z"
     description: A Helm chart to deploy a cloudflared tunnel
-    digest: 8a3cf78ad34bf0fc178be4656229e63b16baa0a3ab5eef59a676e4dd3bba1291
+    digest: be223d71a6591a0f7ea95cdc46ce6b0ef8be35c2399310030f0f27035de9ace6
     name: cloudflare-tunnel
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.11/cloudflare-tunnel-1.0.11.tgz
+    - https://thurcombe.github.io/nullpacket-charts/cloudflare-tunnel-1.0.11.tgz
     version: 1.0.11
   - apiVersion: v2
     appVersion: 2024.2.0
-    created: "2024-02-09T11:31:02.169966978Z"
+    created: "2025-06-16T07:29:10.33352655Z"
     description: A Helm chart to deploy a cloudflared tunnel
-    digest: 79d07b698857fd5a2b9ffabe0f1b4b1c5a8cf85d0ccfcafc8e4b380bb586797d
+    digest: 45d2099eda17d046eb9c19e193a4730bb7c47809fc785ee84aa3c5b184fafdfe
     name: cloudflare-tunnel
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.10/cloudflare-tunnel-1.0.10.tgz
-    version: 1.0.10
-  - apiVersion: v2
-    appVersion: 2023.10.0
-    created: "2023-11-17T20:50:16.807356778Z"
-    description: A Helm chart to deploy a cloudflared tunnel
-    digest: 19a447461cfa2a9a4211b3ab930a13e6fb55401ae6560ce403a981e68aaf6a5b
-    name: cloudflare-tunnel
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.9/cloudflare-tunnel-1.0.9.tgz
-    version: 1.0.9
-  - apiVersion: v2
-    appVersion: 2023.8.2
-    created: "2023-09-15T11:04:52.687366531Z"
-    description: A Helm chart to deploy a cloudflared tunnel
-    digest: ee17716c3efc5068601a644455f9276f60d087d5fa6cb9df33eb310196386394
-    name: cloudflare-tunnel
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.8/cloudflare-tunnel-1.0.8.tgz
-    version: 1.0.8
-  - apiVersion: v2
-    appVersion: 2023.8.0
-    created: "2023-08-25T09:44:52.379304056Z"
-    description: A Helm chart to deploy a cloudflared tunnel
-    digest: b4e74d78a0569250168f58f820c71666ec970737335c3e138a4392dac3ce6530
-    name: cloudflare-tunnel
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.7/cloudflare-tunnel-1.0.7.tgz
-    version: 1.0.7
-  - apiVersion: v2
-    appVersion: 2023.7.3
-    created: "2023-08-22T11:08:06.176574842Z"
-    description: A Helm chart to deploy a cloudflared tunnel
-    digest: 74a8bbd37cd20e8c14d3d770977b4b0491561fc350a4c732af18b5b21d127a68
-    name: cloudflare-tunnel
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.6/cloudflare-tunnel-1.0.6.tgz
-    version: 1.0.6
-  - apiVersion: v2
-    appVersion: 2023.7.1
-    created: "2023-07-18T12:05:33.620592982Z"
-    description: A Helm chart to deploy a cloudflared tunnel
-    digest: 3096ec7626e194ea46132bb302df3a10c842064e276a28674851a05a57888349
-    name: cloudflare-tunnel
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.5/cloudflare-tunnel-1.0.5.tgz
-    version: 1.0.5
-  - apiVersion: v2
-    appVersion: 2023.7.0
-    created: "2023-07-14T16:10:45.795573661Z"
-    description: A Helm chart to deploy a cloudflared tunnel
-    digest: e23075ef9f157c5b42721cf24e4ca515e9dd41a2ece009dfd6527e01c1d7792b
-    name: cloudflare-tunnel
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.4/cloudflare-tunnel-1.0.4.tgz
-    version: 1.0.4
-  - apiVersion: v2
-    appVersion: 2023.7.0
-    created: "2023-07-14T15:45:27.073331745Z"
-    description: A Helm chart to deploy a cloudflared tunnel
-    digest: 0f7ed9ea07eb0602f75414e7187d7f42f6b17a125038f4a4bc8245ca1d27df32
-    name: cloudflare-tunnel
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/cloudflare-tunnel-1.0.3/cloudflare-tunnel-1.0.3.tgz
-    version: 1.0.3
+    - https://thurcombe.github.io/nullpacket-charts/wip/cloudflare-tunnel-1.0.11.tgz
+    version: 1.0.11
   jackett:
   - apiVersion: v2
     appVersion: 0.22.1021
-    created: "2025-05-23T08:28:48.01616722Z"
+    created: "2025-06-16T07:29:10.329775451Z"
     description: A Helm chart for Kubernetes
-    digest: 4e26845a77f20c0928cfa3cd62db75a1f9b7eefd400852cceeb69a37701993a5
+    digest: 4139017dd45033895fcfa7e74bb907662a5c83fa80fe7adf5e0121f1dfaabe4e
     name: jackett
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jackett-0.1.4/jackett-0.1.4.tgz
+    - https://thurcombe.github.io/nullpacket-charts/jackett-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v2
     appVersion: 0.22.1021
-    created: "2025-05-21T09:58:47.598157921Z"
+    created: "2025-06-16T07:29:10.334432886Z"
     description: A Helm chart for Kubernetes
-    digest: 787fd213c52b56d0bdaad995fb9902e9bc9cefd72d792203feb2af1402101e31
+    digest: c643e5401102998873feb59cbc43695016b432f62adba363cfc1011e9bc8f4e1
     name: jackett
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jackett-0.1.3/jackett-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    appVersion: 0.22.1021
-    created: "2025-05-20T14:30:14.594310358Z"
-    description: A Helm chart for Kubernetes
-    digest: b4b95511948fd65938e1e3050fb10cba4022cdd82f8fd5dc5d42280d14ce0542
-    name: jackett
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jackett-0.1.2/jackett-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 0.22.1930
-    created: "2025-05-20T13:16:16.425971432Z"
-    description: A Helm chart for Kubernetes
-    digest: 8fc494725bd32e0b1670b077b6ba327fc2c8ae66e981d9c5097c8e8db4bd8c94
-    name: jackett
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jackett-0.1.1/jackett-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 0.22.1930
-    created: "2025-05-20T13:10:44.345919668Z"
-    description: A Helm chart for Kubernetes
-    digest: 199aba0946f8b70281d3eab6e581870b77e802bf8c40656a742f54cb37661e74
-    name: jackett
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jackett-0.1.0/jackett-0.1.0.tgz
-    version: 0.1.0
+    - https://thurcombe.github.io/nullpacket-charts/wip/jackett-0.1.4.tgz
+    version: 0.1.4
   jellyfin:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-05-23T08:28:48.229196889Z"
+    created: "2025-06-16T07:29:10.330179247Z"
     description: A Helm chart for Kubernetes
-    digest: bd81e34ab24c6904c8bd8a3a01cc921574069b569d2fe4846c694d8166587cf3
+    digest: cd90c20658c3d947800d9eadac26ac0f4ca43f70a08d9d547d873055ef44dddd
     name: jellyfin
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyfin-0.1.3/jellyfin-0.1.3.tgz
+    - https://thurcombe.github.io/nullpacket-charts/jellyfin-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-05-21T09:58:47.734565488Z"
+    created: "2025-06-16T07:29:10.334851349Z"
     description: A Helm chart for Kubernetes
-    digest: 4a1435571f36d304a5a6b9807ca8173d92ee4dc911b50849ad60de05ef755576
+    digest: b2413a282322d4872503260b7a4e3d7674ba0d6903044a6821ee96dad40e3a71
     name: jellyfin
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyfin-0.1.2/jellyfin-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-05-20T12:50:11.986508819Z"
-    description: A Helm chart for Kubernetes
-    digest: 95fffe2bd45d3ca5ededdfcd489980e70cd612010fec4d7d192b30b888a699e1
-    name: jellyfin
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyfin-0.1.1/jellyfin-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-05-20T11:19:23.417386454Z"
-    description: A Helm chart for Kubernetes
-    digest: ece21ea5dec03862c06b096345d4dce0fdc53e54bec938e6768165d7402fd7be
-    name: jellyfin
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyfin-0.1.0/jellyfin-0.1.0.tgz
-    version: 0.1.0
+    - https://thurcombe.github.io/nullpacket-charts/wip/jellyfin-0.1.3.tgz
+    version: 0.1.3
   jellyseer:
   - apiVersion: v2
     appVersion: 2.5.2
-    created: "2025-06-04T15:11:52.359282056Z"
+    created: "2025-06-16T07:29:10.330558727Z"
     description: A Helm chart for Kubernetes
-    digest: 7fe90f0a0a749501e5f1bc35e855f70156cefa8aa33ec17698cd55720b2fc5d0
+    digest: 5c2db59078877cd60bb047cc7900795be1d9024a5d3fd3f65ad8aacf49361e75
     name: jellyseer
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyseer-0.1.2/jellyseer-0.1.2.tgz
+    - https://thurcombe.github.io/nullpacket-charts/jellyseer-0.1.2.tgz
     version: 0.1.2
   - apiVersion: v2
     appVersion: 2.5.2
-    created: "2025-06-04T14:56:59.141503982Z"
+    created: "2025-06-16T07:29:10.335275002Z"
     description: A Helm chart for Kubernetes
-    digest: 49286ee8066ad8e596ed9b4f36fa334d91b9a159ea0076a33bbd83f67a77eb6b
+    digest: 7b13ea79dbff5b3e2a79c4d6149c7c7861080c5e999c10a396ec3dae1caaa2e0
     name: jellyseer
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyseer-0.1.1/jellyseer-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 2.5.2
-    created: "2025-06-04T13:34:37.474644697Z"
-    description: A Helm chart for Kubernetes
-    digest: 9cd59beb397cf2c680548b317df59ec1f03b0b62013b0fcfee6a4db61aeb6d8c
-    name: jellyseer
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/jellyseer-0.1.0/jellyseer-0.1.0.tgz
-    version: 0.1.0
+    - https://thurcombe.github.io/nullpacket-charts/wip/jellyseer-0.1.2.tgz
+    version: 0.1.2
   prowlarr:
   - apiVersion: v2
     appVersion: 1.35.1
-    created: "2025-05-24T20:54:08.045576696Z"
+    created: "2025-06-16T07:29:10.330946923Z"
     description: A Helm chart for Kubernetes
-    digest: 7304ba30e52b73134697e2350f464329425ccd1cd85a0a0ff6dd1dfad4f7a450
+    digest: 6846a2ad1228a5bdb3821ead15d1c3420ac4ee01ee6c4ef0a60c90035bc2a444
     name: prowlarr
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/prowlarr-0.1.3/prowlarr-0.1.3.tgz
+    - https://thurcombe.github.io/nullpacket-charts/prowlarr-0.1.3.tgz
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.35.1
-    created: "2025-05-23T08:28:48.429360238Z"
+    created: "2025-06-16T07:29:10.335652238Z"
     description: A Helm chart for Kubernetes
-    digest: 755cfb9162d737fb70efaef0a87f483867548551879d1288640f5651c9d17f4c
+    digest: 65716406c478e755137e30508b7dfd5b6f85fedfee03017cbd451087428fbc56
     name: prowlarr
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/prowlarr-0.1.2/prowlarr-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 1.35.1
-    created: "2025-05-21T15:33:54.612999513Z"
-    description: A Helm chart for Kubernetes
-    digest: 98341bceaf39aaa5f3e79e539c707c9d1a88e24b6b63aa64dbf0818fc11b8102
-    name: prowlarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/prowlarr-0.1.1/prowlarr-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 1.35.1
-    created: "2025-05-21T15:23:22.200190904Z"
-    description: A Helm chart for Kubernetes
-    digest: 7ff55c42c837be6764f566d4594f15574bca9c7c9ed81d8c9cff3a62a440044b
-    name: prowlarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/prowlarr-0.1.0/prowlarr-0.1.0.tgz
-    version: 0.1.0
+    - https://thurcombe.github.io/nullpacket-charts/wip/prowlarr-0.1.3.tgz
+    version: 0.1.3
   qbittorrent:
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-05-23T08:28:48.637771265Z"
+    created: "2025-06-16T07:29:10.331603141Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
-    digest: 7775c3539b96163f4e59310debffc3eed3925e660a6c966d05fbac0d0f5c6162
+    digest: be2c175c885eab703659240c5012d1bfb655da82a0b3eb2e29383dad7cd3334f
     name: qbittorrent
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qbittorrent-0.1.3/qbittorrent-0.1.3.tgz
-    version: 0.1.3
+    - https://thurcombe.github.io/nullpacket-charts/qbittorrent-0.1.6.tgz
+    version: 0.1.6
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-05-21T09:58:47.859303981Z"
+    created: "2025-06-16T07:29:10.337456794Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
-    digest: 5bc7beee1049b09fe39661e5a8797ffb1aec2c02974881ba40930f51785dfb15
+    digest: 3ea875e1b880db539ea097ef9896ea06bbdf45a1d166383e8698a3ed405452b6
     name: qbittorrent
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qbittorrent-0.1.2/qbittorrent-0.1.2.tgz
-    version: 0.1.2
+    - https://thurcombe.github.io/nullpacket-charts/wip/qbittorrent-0.1.6.tgz
+    version: 0.1.6
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-05-16T14:48:08.541263037Z"
+    created: "2025-06-16T07:29:10.336980062Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
-    digest: 8e58681b8420b75296cb57b6ccdfb8fe77a3b54b7d4f2fbe3f5ba5a2f9ad5224
+    digest: 3f17c5abd1f5dca145764cd06f1118838dd9abf87ea44d6dce772feafc21537b
     name: qbittorrent
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qbittorrent-0.1.1/qbittorrent-0.1.1.tgz
-    version: 0.1.1
-  qtorrent:
-  - apiVersion: v2
-    appVersion: 5.1.0
-    created: "2025-05-16T10:43:50.61768812Z"
-    description: deplyo qtorrent, optionally with gluetun sidecar
-    digest: 1973c72c8f0528a358420fa714b1b28868dffaf08e7ba3c75a1a2e9b1d320948
-    name: qtorrent
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.5/qtorrent-0.1.5.tgz
+    - https://thurcombe.github.io/nullpacket-charts/wip/qbittorrent-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-05-15T11:36:10.923869942Z"
-    description: deplyo qtorrent, optionally with gluetun sidecar
-    digest: d21c5ab81b2f0d653f319df309d4592f74df83306a0efb79872771f142a908d2
-    name: qtorrent
+    created: "2025-06-16T07:29:10.336543906Z"
+    description: deploy qbittorrent, optionally with gluetun sidecar
+    digest: 0e50b4a9e86e1dad3d83d2de390e9d0810a609d39a4e696a1cccb7dc64c583d7
+    name: qbittorrent
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.4/qtorrent-0.1.4.tgz
+    - https://thurcombe.github.io/nullpacket-charts/wip/qbittorrent-0.1.4.tgz
     version: 0.1.4
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-05-15T10:21:52.244926972Z"
-    description: deplyo qtorrent, optionally with gluetun sidecar
-    digest: 5ccb9c982f297c800f0a2d0126f0257a890a50676ce8fbd985e806fb56ae4c96
-    name: qtorrent
+    created: "2025-06-16T07:29:10.3360974Z"
+    description: deploy qbittorrent, optionally with gluetun sidecar
+    digest: 04c82291670e24370e6aceaa388f41ca9d41d8ab9866dd89d71a078ec7034df1
+    name: qbittorrent
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.3/qtorrent-0.1.3.tgz
+    - https://thurcombe.github.io/nullpacket-charts/wip/qbittorrent-0.1.3.tgz
     version: 0.1.3
-  - apiVersion: v2
-    appVersion: 5.1.0
-    created: "2025-05-15T10:10:15.315119765Z"
-    description: deplyo qtorrent, optionally with gluetun sidecar
-    digest: ce38ac1aa29cd4e86b6931685e94a8a531063ad7de0d842daafd04613622128c
-    name: qtorrent
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.2/qtorrent-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 5.1.0
-    created: "2025-05-15T10:05:30.447184603Z"
-    description: deplyo qtorrent, optionally with gluetun sidecar
-    digest: fc104b4360db8ca98cfe242fa0c7c29607ec5e7880d4969021b1ad0f05bfc77b
-    name: qtorrent
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.1/qtorrent-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 5.1.0
-    created: "2025-05-15T09:49:21.889691284Z"
-    description: deplyo qtorrent, optionally with gluetun sidecar
-    digest: 8950842f0189b560658374bde858eaf2404e45a2ba57bd1cca28fb8dacbbe71b
-    name: qtorrent
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/qtorrent-0.1.0/qtorrent-0.1.0.tgz
-    version: 0.1.0
   radarr:
   - apiVersion: v2
     appVersion: 5.23.3
-    created: "2025-05-30T07:11:25.904020624Z"
+    created: "2025-06-16T07:29:10.33197118Z"
     description: A Helm chart for Kubernetes
-    digest: d116866ffa9ac62de56bddcc906386f9da84485563d7168363b38889f0c36257
+    digest: 8d9445f342b812a149a0000b002fce459d51d2c95f27adb4bbb3d2b00b87b5c8
     name: radarr
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.6/radarr-0.1.6.tgz
+    - https://thurcombe.github.io/nullpacket-charts/radarr-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v2
     appVersion: 5.23.3
-    created: "2025-05-24T22:36:27.036423196Z"
+    created: "2025-06-16T07:29:10.337821126Z"
     description: A Helm chart for Kubernetes
-    digest: 1657b80929f887c56008169bfcd7d5d08ac5e347d54497e2e163d637a9542e70
+    digest: d9ac4bc43598de841b66c8ad189c393e106f8aa95f1b86641840864354f06dd1
     name: radarr
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.5/radarr-0.1.5.tgz
-    version: 0.1.5
-  - apiVersion: v2
-    appVersion: 5.23.3
-    created: "2025-05-24T22:04:12.315122898Z"
-    description: A Helm chart for Kubernetes
-    digest: b236dfa68a18c2db54882a29e267c8f39795e1ac7e3e56448c02373b111b746f
-    name: radarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.4/radarr-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-05-24T20:54:08.165624837Z"
-    description: A Helm chart for Kubernetes
-    digest: 799de6cd7f66f232d66290c084107830948abef90d1593129a487557ca353b2c
-    name: radarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.3/radarr-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-05-24T17:33:08.718279387Z"
-    description: A Helm chart for Kubernetes
-    digest: 156dd29bd7635560ee15cbc30eb12414804ca84ca68afa5cfc816b9033916de3
-    name: radarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.2/radarr-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-05-24T17:28:59.779668996Z"
-    description: A Helm chart for Kubernetes
-    digest: 771a931851715cc50f98802d39a493d9475dbee8d36bf713234b3651eed58a33
-    name: radarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.1/radarr-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2025-05-23T12:50:19.34659966Z"
-    description: A Helm chart for Kubernetes
-    digest: df16e9cd9b89cfa36d1150bedf1d93c0de74fc8932d52803c81209b52608bf73
-    name: radarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/radarr-0.1.0/radarr-0.1.0.tgz
-    version: 0.1.0
+    - https://thurcombe.github.io/nullpacket-charts/wip/radarr-0.1.6.tgz
+    version: 0.1.6
   sabnzbd:
   - apiVersion: v2
     appVersion: 4.5.1
-    created: "2025-05-23T08:28:48.835211194Z"
+    created: "2025-06-16T07:29:10.332357553Z"
     description: A Helm chart for Kubernetes
-    digest: d9170bc80a22e009726dc0234d7f2c09606b3034d6085e913c41a06e94eff835
+    digest: 7491f626d071466513ea1a040ee6e48a440c19b678d856b3c99cb7db1c8bc4c5
     name: sabnzbd
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.6/sabnzbd-0.1.6.tgz
+    - https://thurcombe.github.io/nullpacket-charts/sabnzbd-0.1.6.tgz
     version: 0.1.6
   - apiVersion: v2
     appVersion: 4.5.1
-    created: "2025-05-22T21:09:04.876504879Z"
+    created: "2025-06-16T07:29:10.338210324Z"
     description: A Helm chart for Kubernetes
-    digest: ab5ae9469590aa0d4c0fd7c2d1c6ebcc801b9e5a3350f87860f4eb6cd93b89ab
+    digest: dad675402ead10f80fb9c3f34e4f3b251103f03616edb8a807bceb04544b8c1a
     name: sabnzbd
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.5/sabnzbd-0.1.5.tgz
-    version: 0.1.5
-  - apiVersion: v2
-    appVersion: 4.5.1
-    created: "2025-05-22T20:53:59.537612504Z"
-    description: A Helm chart for Kubernetes
-    digest: 9ad538327e99e8cb78e53b8ec6674641d82252eaf53b85e4caf256f36134429a
-    name: sabnzbd
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.4/sabnzbd-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: 4.5.1
-    created: "2025-05-22T18:46:27.444937076Z"
-    description: A Helm chart for Kubernetes
-    digest: 2c83726c65d95e0750b899634e3e0276f51ba19a1df10d5e45f10a30fe2b2614
-    name: sabnzbd
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.3/sabnzbd-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    appVersion: 4.5.1
-    created: "2025-05-22T17:24:46.858755036Z"
-    description: A Helm chart for Kubernetes
-    digest: 8180f667aef2e66ef630104b710c10ebc89cdb6a5a87fa8c5c0cfb1d07bc1f04
-    name: sabnzbd
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.2/sabnzbd-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 4.5.1
-    created: "2025-05-22T17:18:05.072611811Z"
-    description: A Helm chart for Kubernetes
-    digest: 6e799ae09b57265f30eeb0be8eb166b74823b7fb872f033f2c1df07e5bdd19cf
-    name: sabnzbd
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.1/sabnzbd-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 4.5.1
-    created: "2025-05-22T08:12:54.276903989Z"
-    description: A Helm chart for Kubernetes
-    digest: c754c9fa110dd9b8787c4de5ab22c5001d07de3bf1b44f6a2424059ab8236404
-    name: sabnzbd
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sabnzbd-0.1.0/sabnzbd-0.1.0.tgz
-    version: 0.1.0
+    - https://thurcombe.github.io/nullpacket-charts/wip/sabnzbd-0.1.6.tgz
+    version: 0.1.6
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.14
-    created: "2025-05-23T08:28:49.003440237Z"
+    created: "2025-06-16T07:29:10.332726834Z"
     description: A Helm chart for Kubernetes
-    digest: 2002aea20a4e95660edccc837e67ad2480e90fae60c4b1ef23763da87abb47d4
+    digest: 472cfa1fdceda06726eeafa1cdc7d449724582c0281a07b50796a05ffb3d404f
     name: sonarr
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.5/sonarr-0.1.5.tgz
+    - https://thurcombe.github.io/nullpacket-charts/sonarr-0.1.5.tgz
     version: 0.1.5
   - apiVersion: v2
     appVersion: 4.0.14
-    created: "2025-05-21T09:58:47.9731784Z"
+    created: "2025-06-16T07:29:10.338597358Z"
     description: A Helm chart for Kubernetes
-    digest: d6aecfa72320b21d59ef112adbbae7300b69019685f53368310a4e9cacf12a88
+    digest: 37a38fbdfb2aa6e1d86875c0eecf33e2e92ad7da0a7416c0b7ac91621a7ec38d
     name: sonarr
     type: application
     urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.4/sonarr-0.1.4.tgz
-    version: 0.1.4
-  - apiVersion: v2
-    appVersion: 4.0.14
-    created: "2025-05-20T08:29:48.864030207Z"
-    description: A Helm chart for Kubernetes
-    digest: f13b894361d98531e8ae9893a65a9716d8a6f8ac5f3bf8b16aedd8c5ecdfc3b8
-    name: sonarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.3/sonarr-0.1.3.tgz
-    version: 0.1.3
-  - apiVersion: v2
-    appVersion: 4.0.14
-    created: "2025-05-20T08:21:05.120194291Z"
-    description: A Helm chart for Kubernetes
-    digest: 24b480b22a451bbb1d5ee687c95b7b3c0497726bb37b3f2baddef1b5c70f74ee
-    name: sonarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.2/sonarr-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 4.0.14
-    created: "2025-05-20T08:02:09.517601283Z"
-    description: A Helm chart for Kubernetes
-    digest: 9f7a4ad76fa2bc8da1157f24a55d37022046c09ae26be8c447eb7c3a85b14c31
-    name: sonarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.1/sonarr-0.1.1.tgz
-    version: 0.1.1
-  - apiVersion: v2
-    appVersion: 4.0.14
-    created: "2025-05-20T07:43:19.031152237Z"
-    description: A Helm chart for Kubernetes
-    digest: 17afdb3b875c8fea51037b5338110be965086273217ad0d5fd42915d8e992149
-    name: sonarr
-    type: application
-    urls:
-    - https://github.com/thurcombe/nullpacket-charts/releases/download/sonarr-0.1.0/sonarr-0.1.0.tgz
-    version: 0.1.0
-generated: "2025-06-04T15:11:52.359419112Z"
+    - https://thurcombe.github.io/nullpacket-charts/wip/sonarr-0.1.5.tgz
+    version: 0.1.5
+generated: "2025-06-16T07:29:10.328861271Z"
