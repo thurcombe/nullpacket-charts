@@ -3,9 +3,9 @@ entries:
   cloudflare-tunnel:
   - apiVersion: v2
     appVersion: 2024.2.0
-    created: "2025-06-16T07:51:21.2832313Z"
+    created: "2025-06-17T07:51:57.453616956Z"
     description: A Helm chart to deploy a cloudflared tunnel
-    digest: 0d871fb3d906e4ea6148e91946ed07566f753141ae860be50a06b867d64c898e
+    digest: 26c1a34e1b16d4fa847318bef7f11e20c37d8079612e600423624289e14fa46f
     name: cloudflare-tunnel
     type: application
     urls:
@@ -13,7 +13,7 @@ entries:
     version: 1.0.11
   - apiVersion: v2
     appVersion: 2024.2.0
-    created: "2025-06-16T07:51:21.287645092Z"
+    created: "2025-06-17T07:51:57.458077185Z"
     description: A Helm chart to deploy a cloudflared tunnel
     digest: 45d2099eda17d046eb9c19e193a4730bb7c47809fc785ee84aa3c5b184fafdfe
     name: cloudflare-tunnel
@@ -24,9 +24,9 @@ entries:
   jackett:
   - apiVersion: v2
     appVersion: 0.22.1021
-    created: "2025-06-16T07:51:21.283650685Z"
+    created: "2025-06-17T07:51:57.454011585Z"
     description: A Helm chart for Kubernetes
-    digest: 40a56165b920e5ff69b5ba482e0ebbdae579cf42b51ccb881807f00eb364c96d
+    digest: b1971583d4a2def6a95bbe0e324d1c99defd3939ecd0cbb04b2f97dac3cc0428
     name: jackett
     type: application
     urls:
@@ -34,7 +34,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 0.22.1021
-    created: "2025-06-16T07:51:21.288487516Z"
+    created: "2025-06-17T07:51:57.459055519Z"
     description: A Helm chart for Kubernetes
     digest: c643e5401102998873feb59cbc43695016b432f62adba363cfc1011e9bc8f4e1
     name: jackett
@@ -45,9 +45,9 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-06-16T07:51:21.284071974Z"
+    created: "2025-06-17T07:51:57.454428757Z"
     description: A Helm chart for Kubernetes
-    digest: 8a57022f96974a554bee5ec2fc871f4bb21705c67550b9a0729c713e25f8e2d7
+    digest: 085b405d20ce1f6e47c071998822b73e1e53096e1803f101af9018953304129c
     name: jellyfin
     type: application
     urls:
@@ -55,7 +55,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-06-16T07:51:21.288903695Z"
+    created: "2025-06-17T07:51:57.459764097Z"
     description: A Helm chart for Kubernetes
     digest: b2413a282322d4872503260b7a4e3d7674ba0d6903044a6821ee96dad40e3a71
     name: jellyfin
@@ -66,9 +66,9 @@ entries:
   jellyseer:
   - apiVersion: v2
     appVersion: 2.5.2
-    created: "2025-06-16T07:51:21.284447246Z"
+    created: "2025-06-17T07:51:57.454806004Z"
     description: A Helm chart for Kubernetes
-    digest: 1b7bccea0b383d0ff04dd1fc409ff6b29866a9272f02991690a45086e4cc0f14
+    digest: 34d4ade308a9e537b04edbace0d939e4e6a2560150067eb2357494167ee320a1
     name: jellyseer
     type: application
     urls:
@@ -76,7 +76,7 @@ entries:
     version: 0.1.2
   - apiVersion: v2
     appVersion: 2.5.2
-    created: "2025-06-16T07:51:21.289338499Z"
+    created: "2025-06-17T07:51:57.460182682Z"
     description: A Helm chart for Kubernetes
     digest: 7b13ea79dbff5b3e2a79c4d6149c7c7861080c5e999c10a396ec3dae1caaa2e0
     name: jellyseer
@@ -87,9 +87,9 @@ entries:
   prowlarr:
   - apiVersion: v2
     appVersion: 1.35.1
-    created: "2025-06-16T07:51:21.284810526Z"
+    created: "2025-06-17T07:51:57.455175617Z"
     description: A Helm chart for Kubernetes
-    digest: cfd9c16b9de8872923cb7193e7e01895e69a629775a12628aaac0917114168c2
+    digest: dfec20d9b033e6cc1ffe9f655edc8d96b401fee19309a2d4dcb742b43ccb1c98
     name: prowlarr
     type: application
     urls:
@@ -97,7 +97,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 1.35.1
-    created: "2025-06-16T07:51:21.289721195Z"
+    created: "2025-06-17T07:51:57.460634599Z"
     description: A Helm chart for Kubernetes
     digest: 65716406c478e755137e30508b7dfd5b6f85fedfee03017cbd451087428fbc56
     name: prowlarr
@@ -108,9 +108,9 @@ entries:
   qbittorrent:
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-06-16T07:51:21.285709028Z"
+    created: "2025-06-17T07:51:57.456076185Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
-    digest: 87e41425bf70d4e8ce6fdc1ff05871a0d4698ab93de72c2f914b45e51b71cca0
+    digest: de6565d0cf2a1ce981c6622d680be4be8fe4bc045112869a9ef2c66e2b4cb8ac
     name: qbittorrent
     type: application
     urls:
@@ -118,7 +118,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-06-16T07:51:21.285276328Z"
+    created: "2025-06-17T07:51:57.455631762Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
     digest: be2c175c885eab703659240c5012d1bfb655da82a0b3eb2e29383dad7cd3334f
     name: qbittorrent
@@ -128,7 +128,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-06-16T07:51:21.291504002Z"
+    created: "2025-06-17T07:51:57.462418913Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
     digest: 3ea875e1b880db539ea097ef9896ea06bbdf45a1d166383e8698a3ed405452b6
     name: qbittorrent
@@ -138,7 +138,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-06-16T07:51:21.291084456Z"
+    created: "2025-06-17T07:51:57.461965433Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
     digest: 3f17c5abd1f5dca145764cd06f1118838dd9abf87ea44d6dce772feafc21537b
     name: qbittorrent
@@ -148,7 +148,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-06-16T07:51:21.29063233Z"
+    created: "2025-06-17T07:51:57.461540176Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
     digest: 0e50b4a9e86e1dad3d83d2de390e9d0810a609d39a4e696a1cccb7dc64c583d7
     name: qbittorrent
@@ -158,7 +158,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 5.1.0
-    created: "2025-06-16T07:51:21.290210391Z"
+    created: "2025-06-17T07:51:57.461073411Z"
     description: deploy qbittorrent, optionally with gluetun sidecar
     digest: 04c82291670e24370e6aceaa388f41ca9d41d8ab9866dd89d71a078ec7034df1
     name: qbittorrent
@@ -168,8 +168,18 @@ entries:
     version: 0.1.3
   radarr:
   - apiVersion: v2
+    appVersion: 5.26.2
+    created: "2025-06-17T07:51:57.457027388Z"
+    description: A Helm chart for Kubernetes
+    digest: 75ef572adb3d942b2c3eea99070ab4ef24b88326fb718f88ec132f274ed28bda
+    name: radarr
+    type: application
+    urls:
+    - https://thurcombe.github.io/nullpacket-charts/radarr-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     appVersion: 5.23.3
-    created: "2025-06-16T07:51:21.286110409Z"
+    created: "2025-06-17T07:51:57.456655711Z"
     description: A Helm chart for Kubernetes
     digest: a6f4d6b8713177a1100e1df87d296f5a42253ed1287c2f1c743ebb0ac2cdc88b
     name: radarr
@@ -179,7 +189,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 5.23.3
-    created: "2025-06-16T07:51:21.291864817Z"
+    created: "2025-06-17T07:51:57.462786442Z"
     description: A Helm chart for Kubernetes
     digest: d9ac4bc43598de841b66c8ad189c393e106f8aa95f1b86641840864354f06dd1
     name: radarr
@@ -190,9 +200,9 @@ entries:
   sabnzbd:
   - apiVersion: v2
     appVersion: 4.5.1
-    created: "2025-06-16T07:51:21.286482235Z"
+    created: "2025-06-17T07:51:57.457401529Z"
     description: A Helm chart for Kubernetes
-    digest: 702ef3de61dc6dcf17712bb1033e4e3b62c2be9bd4f2e888b2067dcdd9f9e36c
+    digest: 7521e5ccba195f7cdd0c3bd3ca89c51078358dd52fac9309a5dc74a9405634de
     name: sabnzbd
     type: application
     urls:
@@ -200,7 +210,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 4.5.1
-    created: "2025-06-16T07:51:21.292263683Z"
+    created: "2025-06-17T07:51:57.463138552Z"
     description: A Helm chart for Kubernetes
     digest: dad675402ead10f80fb9c3f34e4f3b251103f03616edb8a807bceb04544b8c1a
     name: sabnzbd
@@ -211,9 +221,9 @@ entries:
   sonarr:
   - apiVersion: v2
     appVersion: 4.0.14
-    created: "2025-06-16T07:51:21.286859682Z"
+    created: "2025-06-17T07:51:57.45779156Z"
     description: A Helm chart for Kubernetes
-    digest: ea4d5818f6e035e52faffff0a39626f6c83945e0332ae14d7d170505d5df34c3
+    digest: 25ad9918f958d6058747a803c79aa583dd79f134125ca279a0484ec6c1fa2e05
     name: sonarr
     type: application
     urls:
@@ -221,7 +231,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 4.0.14
-    created: "2025-06-16T07:51:21.292632003Z"
+    created: "2025-06-17T07:51:57.463540054Z"
     description: A Helm chart for Kubernetes
     digest: 37a38fbdfb2aa6e1d86875c0eecf33e2e92ad7da0a7416c0b7ac91621a7ec38d
     name: sonarr
@@ -229,4 +239,4 @@ entries:
     urls:
     - https://thurcombe.github.io/nullpacket-charts/wip/sonarr-0.1.5.tgz
     version: 0.1.5
-generated: "2025-06-16T07:51:21.282757253Z"
+generated: "2025-06-17T07:51:57.45313933Z"
