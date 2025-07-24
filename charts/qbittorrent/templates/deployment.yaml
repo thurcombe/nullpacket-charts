@@ -55,6 +55,10 @@ spec:
         {{- with .Values.env }}
         {{- toYaml . | nindent 12 }}
         {{- end }}
+        {{- if .Values.vuetorrent.enabled }}
+          - name: DOCKER_MODS
+            value: "{{ .Values.vuetorrent.image}}:{{ .Values.vuetorrent.tag }}"
+        {{- end }}
       {{- if .Values.vpn.enabled }}
       - name: vpn
         image: "{{ .Values.vpn.image.repository }}:{{ .Values.vpn.image.tag | default .Chart.AppVersion }}"

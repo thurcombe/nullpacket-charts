@@ -8,6 +8,13 @@ image:
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
 
+# enable this to pull in vuetorrent alternate webUI files, this only works with linuxserver.io qbitorrent image
+# you must also update the qbitorrent config, setting alternative UI path to /vuetorrent
+vuetorrent:
+  enabled: false
+  repository: "ghcr.io/vuetorrent/vuetorrent-lsio-mod"
+  tag: "2.27.0"
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
