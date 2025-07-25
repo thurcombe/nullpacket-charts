@@ -1,0 +1,22 @@
+{
+  "regexManagers": [
+    {
+      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
+      "matchStrings": [
+        "appVersion:\\s*\"(?<currentValue>.*?)\""
+      ],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "jellyfin/jellyfin",
+      "versioningTemplate": "loose"
+    },
+    {
+      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
+      "matchStrings": [
+        "version:\\s*\"?(?<currentValue>\\d+\\.\\d+\\.\\d+)\"?"
+      ],
+      "datasourceTemplate": "helm",
+      "packageNameTemplate": "jellyfin-chart",
+      "versioningTemplate": "semver"
+    }
+  ]
+}
