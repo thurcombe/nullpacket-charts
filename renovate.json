@@ -1,147 +1,26 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
   "regexManagers": [
     {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
+      "matchStrings": [
+        "appVersion:\\s?\"?(?<currentValue>.*)\"?"
+      ],
       "datasourceTemplate": "docker",
-      "packageNameTemplate": "jellyfin/jellyfin",
-      "versioningTemplate": "loose"
+      "depNameTemplate": "docker.io/jellyfin/jellyfin",
+      "versioningTemplate": "loose",
+      "bumpVersion": "patch"
     },
     {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "jellyfin",
+      "matchStrings": [
+        "version:\\s?\"?(?<currentValue>\\d+\\.\\d+\\.\\d+)\"?"
+      ],
+      "datasourceTemplate": "regex",
+      "depNameTemplate": "chart-version",
       "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    },
-
-    {
-      "fileMatch": ["^charts/jellyseer/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "fallenbagel/jellyseerr",
-      "versioningTemplate": "loose"
-    },
-    {
-      "fileMatch": ["^charts/jellyseer/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "jellyseer",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    },
-
-    {
-      "fileMatch": ["^charts/qbittorrent/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/qbittorrent",
-      "versioningTemplate": "loose"
-    },
-    {
-      "fileMatch": ["^charts/qbittorrent/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "qbittorrent",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    },
-    {
-      "fileMatch": ["^charts/qbittorrent/values.yaml$"],
-      "matchStrings": ["repository:\\s*qmcgaw/gluetun\\s*\\n\\s*tag:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "qmcgaw/gluetun",
-      "versioningTemplate": "loose"
-    },
-
-    {
-      "fileMatch": ["^charts/prowlarr/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/prowlarr",
-      "versioningTemplate": "loose"
-    },
-    {
-      "fileMatch": ["^charts/prowlarr/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "prowlarr",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    },
-
-    {
-      "fileMatch": ["^charts/radarr/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/radarr",
-      "versioningTemplate": "loose"
-    },
-    {
-      "fileMatch": ["^charts/radarr/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "radarr",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    },
-
-    {
-      "fileMatch": ["^charts/jackett/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/jackett",
-      "versioningTemplate": "loose"
-    },
-    {
-      "fileMatch": ["^charts/jackett/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "jackett",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    },
-
-    {
-      "fileMatch": ["^charts/sonarr/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/sonarr",
-      "versioningTemplate": "loose"
-    },
-    {
-      "fileMatch": ["^charts/sonarr/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "sonarr",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    },
-
-    {
-      "fileMatch": ["^charts/sabnzbd/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"(?<currentValue>.*?)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/sabnzbd",
-      "versioningTemplate": "loose"
-    },
-    {
-      "fileMatch": ["^charts/sabnzbd/Chart.yaml$"],
-      "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
-      "datasourceTemplate": "helm",
-      "packageNameTemplate": "sabnzbd",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch"
-    }
-  ],
-  "bumpVersions": [
-    {
-      "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
-      "matchStrings": ["version:\\s(?<version>[^\\s]+)"],
-      "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
+      "bumpVersion": "patch",
+      "bumpVersionStrategy": "increase"
     }
   ]
 }
-
