@@ -1,8 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "helm": {
-    "enabled": true
-  },
   "regexManagers": [
     {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
