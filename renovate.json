@@ -136,7 +136,6 @@
       "bumpVersion": "patch"
     }
   ],
-  {
   "bumpVersions": [
     {
       "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
@@ -144,6 +143,5 @@
       "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
     }
   ]
- }
 }
 
