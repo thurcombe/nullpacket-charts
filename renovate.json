@@ -1,3 +1,17 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "helm": {
+    "enabled": true
+  },
+  "regexManagers": [
+    {
+      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
+      "matchStrings": [
+        "appVersion:\\s*\"(?<currentValue>.*?)\""
+      ],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "jellyfin/jellyfin",
+      "versioningTemplate": "loose"
+    }
+  ]
 }
