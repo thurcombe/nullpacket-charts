@@ -13,7 +13,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "jellyfin",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     },
 
     {
@@ -28,7 +29,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "jellyseer",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     },
 
     {
@@ -43,7 +45,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "qbittorrent",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     },
     {
       "fileMatch": ["^charts/qbittorrent/values.yaml$"],
@@ -65,7 +68,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "prowlarr",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     },
 
     {
@@ -80,7 +84,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "radarr",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     },
 
     {
@@ -95,7 +100,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "jackett",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     },
 
     {
@@ -110,7 +116,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "sonarr",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     },
 
     {
@@ -125,7 +132,8 @@
       "matchStrings": ["version:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""],
       "datasourceTemplate": "helm",
       "packageNameTemplate": "sabnzbd",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "bumpVersion": "patch"
     }
   ]
 }
