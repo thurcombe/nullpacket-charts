@@ -1,9 +1,15 @@
 {
-  "extends": ["config:base"],
+  "extends": [
+    "config:recommended"
+  ],
   "bumpVersions": [
     {
-      "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
-      "matchStrings": ["version:\\s(?<version>[^\\s]+)"],
+      "filePatterns": [
+        "{{packageFileDir}}/Chart.{yaml,yml}"
+      ],
+      "matchStrings": [
+        "version:\\s(?<version>[^\\s]+)"
+      ],
       "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
     }
   ]
