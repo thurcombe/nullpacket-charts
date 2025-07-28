@@ -1,26 +1,10 @@
 {
   "extends": ["config:base"],
-  "regexManagers": [
+  "bumpVersions": [
     {
-      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": [
-        "appVersion:\\s?\"?(?<currentValue>.*)\"?"
-      ],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "docker.io/jellyfin/jellyfin",
-      "versioningTemplate": "loose",
-      "bumpVersion": "patch"
-    },
-    {
-      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": [
-        "version:\\s?\"?(?<currentValue>\\d+\\.\\d+\\.\\d+)\"?"
-      ],
-      "datasourceTemplate": "regex",
-      "depNameTemplate": "chart-version",
-      "versioningTemplate": "semver",
-      "bumpVersion": "patch",
-      "bumpVersionStrategy": "increase"
+      "filePatterns": ["{{packageFileDir}}/Chart.{yaml,yml}"],
+      "matchStrings": ["version:\\s(?<version>[^\\s]+)"],
+      "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
     }
   ]
 }
