@@ -2,14 +2,8 @@
   "extends": ["config:base"],
   "regexManagers": [
     {
-      "fileMatch": ["^charts/cloudflare-tunnel/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"?(?<currentValue>[^\\s]+)\"?"],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "cloudflare/cloudflared"
-    },
-    {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"?(?<currentValue>[^\\s]+)\"?"],
+      "matchStrings": ["^appVersion:\\s*\"?(?<currentValue>[^\\s\"]+)\"?"],
       "datasourceTemplate": "docker",
       "packageNameTemplate": "linuxserver/jellyfin"
     }
