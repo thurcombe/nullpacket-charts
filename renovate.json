@@ -1,19 +1,35 @@
 {
+  "extends": ["config:base"],
   "regexManagers": [
     {
+      "fileMatch": ["^charts/cloudflare-tunnel/Chart.yaml$"],
+      "matchStrings": ["appVersion:\\s*\"?(?<currentValue>[^\\s]+)\"?"],
+      "datasourceTemplate": "docker",
+      "packageNameTemplate": "cloudflare/cloudflared"
+    },
+    {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s*\"?(?<currentValue>[^\"]+)\"?"],
+      "matchStrings": ["appVersion:\\s*\"?(?<currentValue>[^\\s]+)\"?"],
       "datasourceTemplate": "docker",
       "packageNameTemplate": "linuxserver/jellyfin"
     }
   ],
   "bumpVersions": [
     {
-      "filePatterns": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": [
-        "version:\\s*\"?(?<version>\\d+\\.\\d+\\.\\d+)\"?"
-      ],
-      "bumpType": "patch"
+      "name": "Bump chart version",
+      "filePatterns": ["{{#each (distinct (lookupArray upgrades \"packageFileDir\"))}}{{{.}}}{{#unless @last}}|{{/unless}}{{/each}}/Chart\\.(yaml|yml)$"],
+      "matchStrings": ["version:\\s*(?<version>[^\\s]+)"],
+      "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "matchDatasources": ["docker"],
+      "groupName": "Helm chart updates",
+      "semanticCommitType": "fix",
+      "commitMessageTopic": "{{{packageName}}}"
     }
   ]
 }
+
