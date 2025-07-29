@@ -1,27 +1,25 @@
 {
   "extends": ["config:base"],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": ["appVersion:\\s+\"(?<currentValue>.+)\""],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/jellyfin",
-      "postUpgradeTasks": {
-        "commands": [
-          "CURRENT=$(yq e '.version' charts/jellyfin/Chart.yaml)",
-          "NEW=$(echo \"$CURRENT\" | awk -F. '{$3+=1; print $1\".\"$2\".\"$3}')",
-          "yq e -i \".version = \\\"$NEW\\\"\" charts/jellyfin/Chart.yaml"
-        ],
-        "fileFilters": ["charts/jellyfin/Chart.yaml"]
-      }
+      "customType": "regex",
+      "managerFilePatterns": ["^charts/jellyfin/Chart.yaml$"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[^ ]+) depName=(?<depName>[^\\s]+)",
+        "appVersion:\\s*\"(?<currentValue>.+)\""
+      ]
     }
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["linuxserver/jellyfin"],
-      "groupName": "Helm jellyfin update",
-      "semanticCommitType": "fix",
-      "commitMessageTopic": "{{packageName}}"
+      "description": "Bump helm chart versions by a patch when updating values files. Digests, pins, rollbacks, replacements and pinDigest updates are deliberately ignored since in our use case, these need a manual decision about the version bump for the chart. This can be removed when https://github.com/renovatebot/renovate/issues/8231 is implemented and enabled.",
+      "matchManagers": ["helm-values"],
+      "postUpgradeTasks": {
+        "commands": [
+          "bash scripts/bump-chart-version.sh '{{{parentDir}}}' '{{{isMajor}}}' '{{{isMinor}}}' '{{{isPatch}}}'"
+        ],
+        "fileFilters": ["**/Chart.yaml"]
+      }
     }
   ]
 }
