@@ -1,0 +1,48 @@
+{
+  "extends": ["config:base"],
+  "regexManagers": [
+    {
+      "description": "Detect Docker image tag from values.yaml",
+      "fileMatch": ["charts/[^/]+/values.yaml"],
+      "matchStrings": [
+        "repository:\\s*(?<depName>\\S+)",
+        "tag:\\s*\"?(?<currentValue>[0-9a-zA-Z._\\-]+)\"?"
+      ],
+      "datasourceTemplate": "docker"
+    },
+    {
+      "description": "Update appVersion in Chart.yaml",
+      "fileMatch": ["charts/[^/]+/Chart.yaml"],
+      "matchStrings": [
+        "appVersion:\\s*\"?(?<currentValue>[0-9a-zA-Z._\\-]+)\"?"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "{{ chartDirImageRepo }}",
+      "versioningTemplate": "loose"
+    },
+    {
+      "description": "Bump chart version when appVersion updates",
+      "fileMatch": ["charts/[^/]+/Chart.yaml"],
+      "matchStrings": [
+        "version:\\s*\"?(?<currentValue>\\d+\\.\\d+\\.\\d+)\"?"
+      ],
+      "versioning": "semver",
+      "autoReplaceVersion": true
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "matchDatasources": ["docker"],
+      "commitMessageTopic": "{{depName}} image",
+      "semanticCommitType": "fix",
+      "groupName": "helm chart image updates",
+      "postUpgradeTasks": {
+        "commands": [
+          "echo bumping chart version due to appVersion change"
+        ],
+        "fileFilters": ["charts/"]
+      }
+    }
+  ]
+}
