@@ -1,20 +1,29 @@
 {
+  "extends": ["config:base"],
   "regexManagers": [
+  
     {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": [
-        "appVersion:\\s*\"?(?<currentValue>[0-9a-zA-Z._\\-]+)\"?"
-      ],
+      "matchStrings": ["appVersion:\\s*\"?(?<currentValue>[^\"]+)\"?"],
       "datasource": "docker",
       "depName": "linuxserver/jellyfin"
     }
   ],
   "bumpVersions": [
     {
-      "name": "Bump Helm chart version when appVersion changes",
-      "filePatterns": ["^charts/jellyfin/Chart.yaml$"],
+      "name": "Bump Helm chart version",
+      "filePatterns": ["^charts/[^/]+/Chart.yaml$"],
       "bumpType": "patch",
       "matchStrings": ["version:\\s*\"?(?<version>\\d+\\.\\d+\\.\\d+)\"?"]
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["regex"],
+      "matchDatasources": ["docker"],
+      "groupName": "Helm chart appVersion updates",
+      "semanticCommitType": "fix",
+      "commitMessageTopic": "{{depName}}"
     }
   ]
 }
