@@ -3,21 +3,17 @@
   "regexManagers": [
     {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": [
-        "appVersion:\\s+\"(?<currentValue>.+)\""
-      ],
+      "matchStrings": ["appVersion:\\s+\"(?<currentValue>.+)\""],
       "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/jellyfin"
-    }
-  ],
-  "bumpVersions": [
-    {
-      "name": "Bump Helm chart version",
-      "filePatterns": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": [
-        "version:\\s+\"(?<version>\\d+\\.\\d+\\.\\d+)\""
-      ],
-      "bumpType": "patch"
+      "packageNameTemplate": "linuxserver/jellyfin",
+      "postUpgradeTasks": {
+        "commands": [
+          "CURRENT=$(yq e '.version' charts/jellyfin/Chart.yaml)",
+          "NEW=$(echo \"$CURRENT\" | awk -F. '{$3+=1; print $1\".\"$2\".\"$3}')",
+          "yq e -i \".version = \\\"$NEW\\\"\" charts/jellyfin/Chart.yaml"
+        ],
+        "fileFilters": ["charts/jellyfin/Chart.yaml"]
+      }
     }
   ],
   "packageRules": [
