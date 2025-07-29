@@ -1,48 +1,32 @@
 {
   "extends": ["config:base"],
-  "regexManagers": [
+  "customManagers": [
     {
-      "description": "Detect Docker image tag from values.yaml",
-      "fileMatch": ["charts/[^/]+/values.yaml"],
-      "matchStrings": [
-        "repository:\\s*(?<depName>\\S+)",
-        "tag:\\s*\"?(?<currentValue>[0-9a-zA-Z._\\-]+)\"?"
-      ],
-      "datasourceTemplate": "docker"
-    },
-    {
-      "description": "Update appVersion in Chart.yaml",
-      "fileMatch": ["charts/[^/]+/Chart.yaml"],
+      "customType": "regex",
+      "description": "jellyfin",
+      "managerFilePatterns": ["^charts/jellyfin/Chart.yaml$"],
       "matchStrings": [
         "appVersion:\\s*\"?(?<currentValue>[0-9a-zA-Z._\\-]+)\"?"
       ],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "{{ chartDirImageRepo }}",
-      "versioningTemplate": "loose"
-    },
+      "datasource": "docker",
+      "depName": "linuxserver/jellyfin"
+    }
+  ],
+  "bumpVersions": [
     {
-      "description": "Bump chart version when appVersion updates",
-      "fileMatch": ["charts/[^/]+/Chart.yaml"],
-      "matchStrings": [
-        "version:\\s*\"?(?<currentValue>\\d+\\.\\d+\\.\\d+)\"?"
-      ],
-      "versioning": "semver",
-      "autoReplaceVersion": true
+      "filePatterns": ["^charts/[^/]+/Chart.yaml$"],
+      "matchPattern": "version:\\s*\"?(?<currentValue>\\d+\\.\\d+\\.\\d+)\"?",
+      "replacementTemplate": "version: {{newVersion}}",
+      "bumpType": "patch"
     }
   ],
   "packageRules": [
     {
       "matchManagers": ["regex"],
       "matchDatasources": ["docker"],
-      "commitMessageTopic": "{{depName}} image",
-      "semanticCommitType": "fix",
-      "groupName": "helm chart image updates",
-      "postUpgradeTasks": {
-        "commands": [
-          "echo bumping chart version due to appVersion change"
-        ],
-        "fileFilters": ["charts/"]
-      }
+      "groupName": "Helm appVersion updates",
+      "commitMessageTopic": "{{depName}}",
+      "semanticCommitType": "fix"
     }
   ]
 }
