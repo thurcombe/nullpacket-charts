@@ -5,7 +5,7 @@
   "bumpVersions": [
     {
       "filePatterns": [
-        "{{packageFileDir}}/Chart.{yaml,yml}"
+        "charts/jellyfin/Chart.{yaml,yml}"
       ],
       "matchStrings": [
         "version:\\s(?<version>[^\\s]+)"
