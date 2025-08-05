@@ -6,13 +6,13 @@
     {
       "customType": "regex",
       "managerFilePatterns": [
-        "/charts/jellyfin/Chart\\.yaml/"
+        "charts/jellyfin/Chart\\.yaml/"
       ],
       "matchStrings": [
-        "appVersion:\\s?(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+        "appVersion:\\s?\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "lscr.io/linuxserver/jellyfin",
+      "depNameTemplate": "hub.docker.io/linuxserver/jellyfin",
       "versioningTemplate": "semver"
     }
   ],
