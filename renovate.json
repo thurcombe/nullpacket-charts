@@ -21,7 +21,7 @@
 
   "packageRules": [
     {
-      "matchFilePaths": ["charts/jellyfin/Chart.yaml"],
+      "matchPaths": ["charts/jellyfin/Chart.yaml"],
       "matchDatasources": ["docker"],
       "commitMessageTopic": "jellyfin helm chart",
       "semanticCommits": true,
