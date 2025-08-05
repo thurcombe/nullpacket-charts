@@ -14,7 +14,7 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "hub.docker.io/linuxserver/jellyfin",
       "versioningTemplate": "semver",
-      "versionning": "bump-only"
+      "versioning": "bump-only"
     }
   ],
   "bumpVersions": [
