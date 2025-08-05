@@ -4,10 +4,10 @@
     {
       "fileMatch": ["^charts/jellyfin/Chart\\.yaml$"],
       "matchStrings": [
-        "appVersion:\\s?\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""
+        "appVersion:\\s?\"?(?<currentValue>\\d+\\.\\d+\\.\\d+)\"?"
       ],
-      "depNameTemplate": "linuxserver/jellyfin",
       "datasourceTemplate": "docker",
+      "depNameTemplate": "linuxserver/jellyfin",
       "versioningTemplate": "semver"
     },
     {
@@ -15,24 +15,18 @@
       "matchStrings": [
         "version:\\s(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "depNameTemplate": "jellyfin-chart-version",
-      "datasourceTemplate": "docker",  // Must be *something* valid
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "linuxserver/jellyfin",
       "versioningTemplate": "semver"
     }
   ],
   "packageRules": [
     {
-      "matchDepNames": ["linuxserver/jellyfin"],
-      "commitMessageTopic": "jellyfin appVersion",
+      "matchPackageNames": ["linuxserver/jellyfin"],
+      "matchPaths": ["charts/jellyfin/Chart.yaml"],
+      "commitMessageTopic": "Update jellyfin Helm chart",
       "semanticCommits": "enabled",
-      "labels": ["docker", "helm", "jellyfin"],
-      "automerge": false
-    },
-    {
-      "matchDepNames": ["jellyfin-chart-version"],
-      "commitMessageTopic": "helm chart version",
-      "semanticCommits": "enabled",
-      "labels": ["helm", "chart-version"],
+      "labels": ["helm", "docker", "jellyfin"],
       "automerge": false
     }
   ]
