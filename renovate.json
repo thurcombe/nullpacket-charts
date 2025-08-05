@@ -3,11 +3,14 @@
   "onboarding": false,
   "regexManagers": [
     {
-      "description": "Update Docker tag in appVersion of Chart.yaml",
       "fileMatch": ["^Chart\\.yaml$"],
       "matchStrings": [
-        "(?m)^#\\s*renovate:\\s*datasource=(?<datasource>\\S+)\\s+depName=(?<depName>\\S+)(?:\\s+versioning=(?<versioning>\\S+))?\\s*\\nappVersion:\\s+\"?(?<currentValue>[^\"]+)\"?"
-      ]
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>\\S+))?\\nappVersion: \"(?<currentValue>.*?)\""
+      ],
+      "datasourceTemplate": "{{ datasource }}",
+      "depNameTemplate": "{{ depName }}",
+      "versioningTemplate": "{{ versioning }}"
     }
   ]
 }
+  
