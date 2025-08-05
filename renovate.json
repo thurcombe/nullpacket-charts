@@ -17,7 +17,7 @@
       "matchStrings": [
         "version:\\s(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "datasourceTemplate": "github-tags",
+      "datasourceTemplate": "repoconfig",
       "depNameTemplate": "nullpacket/jellyfin-chart-version",
       "versioningTemplate": "semver"
     }
