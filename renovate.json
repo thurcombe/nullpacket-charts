@@ -22,7 +22,7 @@
         "{{packageFileDir}}/Chart.(yaml|yml)"
       ],
       "matchStrings": [
-        "version:\\s(?<version>[^\\s]+)"
+        "version:\\s(?<version>\\d+\\.\\d+\\.\\d+)"
       ],
       "bumpType": "{{#if isPatch}}patch{{else}}minor{{/if}}"
     }
