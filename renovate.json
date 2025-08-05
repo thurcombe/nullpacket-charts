@@ -1,14 +1,3 @@
 {
-  "extends": ["config:recommended"],
-  "packageRules": [
-    {
-      "matchPackageNames": ["linuxserver/jellyfin"],
-      "matchDatasources": ["docker"],
-      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
-      "commitMessageTopic": "jellyfin helm chart",
-      "semanticCommits": "enabled",
-      "labels": ["helm", "docker", "jellyfin"],
-      "automerge": false
-    }
-  ]
+  "extends": ["config:recommended"]
 }
