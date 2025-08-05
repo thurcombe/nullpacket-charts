@@ -1,9 +1,13 @@
 {
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["charts/jellyfin/Chart\\.yaml"],
+      "managerFilePatterns": [
+        "charts/jellyfin/Chart\\.yaml"
+      ],
       "matchStrings": [
         "appVersion:\\s?\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""
       ],
@@ -12,20 +16,22 @@
       "versioningTemplate": "semver"
     }
   ],
-  "bumpVersion": [
-    {
-      "filePatterns": ["charts/jellyfin/Chart.yaml"],
-      "matchStrings": ["version:\\s(?<version>\\d+\\.\\d+\\.\\d+)"],
-      "bumpType": "patch"
-    }
-  ],
+  "bumpVersion": "[object Object]",
   "packageRules": [
     {
-      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
-      "matchDatasources": ["docker"],
+      "matchFileNames": [
+        "charts/jellyfin/Chart.yaml"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
       "commitMessageTopic": "Update jellyfin helm chart",
       "semanticCommits": "enabled",
-      "labels": ["helm", "docker", "jellyfin"],
+      "labels": [
+        "helm",
+        "docker",
+        "jellyfin"
+      ],
       "automerge": false
     }
   ]
