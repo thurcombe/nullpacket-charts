@@ -19,24 +19,18 @@
       ],
       "datasourceTemplate": "repoconfig",
       "depNameTemplate": "nullpacket/jellyfin-chart-version",
-      "versioningTemplate": "semver"
+      "versioningTemplate": "semver",
+      "extractVersionTemplate": "{{currentValue}}"
     }
   ],
   "packageRules": [
     {
-      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
-      "matchDatasources": ["docker"],
-      "commitMessageTopic": "jellyfin helm chart",
+      "matchDepNames": ["linuxserver/jellyfin", "nullpacket/jellyfin-chart-version"],
+      "commitMessageTopic": "jellyfin Helm chart",
       "semanticCommits": "enabled",
-      "labels": ["helm", "docker", "jellyfin"],
-      "automerge": false
-    },
-    {
-      "matchDepNames": ["nullpacket/jellyfin-chart-version"],
-      "commitMessageTopic": "bump jellyfin chart version",
-      "semanticCommits": "enabled",
-      "labels": ["helm", "chart-version"],
-      "automerge": false
+      "labels": ["helm", "jellyfin"],
+      "automerge": false,
+      "groupName": "Jellyfin chart and image"
     }
   ]
 }
