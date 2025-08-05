@@ -1,38 +1,11 @@
 {
   "extends": ["config:recommended"],
-  "enabledManagers": ["regex"],
-  "regexManagers": [
-    {
-      "fileMatch": ["charts/jellyfin/Chart\\.yaml"],
-      "matchStrings": [
-        "appVersion:\\s*\"(?<currentValue>\\d+\\.\\d+\\.\\d+)\""
-      ],
-      "depNameTemplate": "linuxserver/jellyfin",
-      "datasourceTemplate": "docker",
-      "versioningTemplate": "semver"
-    },
-    {
-      "fileMatch": ["charts/jellyfin/Chart\\.yaml"],
-      "matchStrings": [
-        "version:\\s(?<currentValue>\\d+\\.\\d+\\.\\d+)"
-      ],
-      "depNameTemplate": "jellyfin/chart-version",
-      "datasourceTemplate": "github-tags",
-      "versioningTemplate": "semver"
-    }
-  ],
   "packageRules": [
     {
-      "matchDepNames": ["jellyfin/chart-version"],
-      "versioning": "semver",
-      "commitMessageTopic": "bump jellyfin chart version",
-      "semanticCommits": "enabled",
-      "labels": ["helm", "chart-version"],
-      "automerge": false
-    },
-    {
-      "matchDepNames": ["linuxserver/jellyfin"],
-      "commitMessageTopic": "jellyfin appVersion",
+      "matchPackageNames": ["linuxserver/jellyfin"],
+      "matchDatasources": ["docker"],
+      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
+      "commitMessageTopic": "jellyfin helm chart",
       "semanticCommits": "enabled",
       "labels": ["helm", "docker", "jellyfin"],
       "automerge": false
