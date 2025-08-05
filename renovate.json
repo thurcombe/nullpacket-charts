@@ -14,18 +14,17 @@
     {
       "fileMatch": ["charts/jellyfin/Chart\\.yaml"],
       "matchStrings": [
-        "version:\\s*(?<currentValue>\\d+\\.\\d+\\.\\d+)"
+        "version:\\s(?<currentValue>\\d+\\.\\d+\\.\\d+)"
       ],
-      "depNameTemplate": "linuxserver/jellyfin-chart-version",
-      "datasourceTemplate": "npm",
-      "extractVersion": false,       
+      "depNameTemplate": "jellyfin/chart-version",
+      "datasourceTemplate": "github-tags",
       "versioningTemplate": "semver"
     }
   ],
   "packageRules": [
     {
-      "matchDepNames": ["linuxserver/jellyfin-chart-version"],
-      "bumpVersion": "patch",
+      "matchDepNames": ["jellyfin/chart-version"],
+      "versioning": "semver",
       "commitMessageTopic": "bump jellyfin chart version",
       "semanticCommits": "enabled",
       "labels": ["helm", "chart-version"],
