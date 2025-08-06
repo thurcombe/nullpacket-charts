@@ -9,8 +9,7 @@
       "datasourceTemplate": "docker",
       "packageNameTemplate": "linuxserver/jellyfin",
       "versioningTemplate": "semver",
-      "extractVersionTemplate": "{{{ currentValue }}}",
-      "commitMessageTopic": "jellyfin image version"
+      "extractVersionTemplate": "{{{ currentValue }}}"
     },
     {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
@@ -20,15 +19,14 @@
       "datasourceTemplate": "helm",
       "packageNameTemplate": "jellyfin",
       "versioningTemplate": "semver",
-      "extractVersionTemplate": "{{{ currentValue }}}",
-      "commitMessageTopic": "jellyfin chart version"
+      "extractVersionTemplate": "{{{ currentValue }}}"
     }
   ],
   "packageRules": [
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
-      "commitMessageExtra": "Update Docker image and bump chart version",
+      "groupName": "Update jellyfin image and chart version",
       "postUpdateOptions": ["bumpVersion"]
     }
   ]
