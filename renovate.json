@@ -4,7 +4,7 @@
     {
       "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
       "matchStrings": [
-        "appVersion:\\s?\"?(?<currentValue>.*?)\"?\\s*#\\s*renovate: datasource=docker depName=linuxserver/jellyfin versioning=semver"
+        "appVersion:\\s*\"?(?<currentValue>.*?)\"?\\s*#\\s*renovate: datasource=docker depName=linuxserver/jellyfin versioning=semver"
       ],
       "datasourceTemplate": "docker",
       "packageNameTemplate": "linuxserver/jellyfin",
@@ -12,12 +12,20 @@
       "extractVersionTemplate": "{{{ currentValue }}}"
     }
   ],
+  "bumpVersions": [
+    {
+      "filePatterns": ["charts/jellyfin/Chart.yaml"],
+      "matchStrings": [
+        "version:\\s(?<version>\\d+\\.\\d+\\.\\d+)"
+      ],
+      "bumpType": "patch"
+    }
+  ],
   "packageRules": [
     {
+      "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
-      "matchManagers": ["regex"],
-      "groupName": "Update jellyfin Docker image and chart version",
-      "postUpdateOptions": ["bumpVersion"]
+      "groupName": "Update jellyfin image and bump chart version"
     }
   ]
 }
