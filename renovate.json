@@ -1,14 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  "onboarding": false,
-  "requireConfig": "optional",
-  "helmv3": {
-    "enabled": true
-  },
-  "regexManagers": [
+  "extends": ["config:recommended"],
+  "helmv3": {"enabled": true},
+  "customManagers": [
     {
-      "fileMatch": ["^charts/jellyfin/Chart\\.yaml$"],
+      "customType": "regex",
+      "managerFilePatterns": ["/^charts/jellyfin/Chart\\.yaml$/"],
       "matchStrings": [
         "appVersion:\\s*\"?(?<currentValue>[^\"]+)\"?\\s*#\\s*renovate:\\s*datasource=docker\\s+depName=linuxserver/jellyfin"
       ],
@@ -21,7 +18,7 @@
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
-      "matchFiles": ["charts/jellyfin/Chart.yaml"],
+      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
       "groupName": "Update jellyfin image and bump chart version",
       "versioning": "docker",
       "bumpVersion": "patch"
