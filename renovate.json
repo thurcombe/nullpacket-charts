@@ -1,7 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:recommended"],
-  "helmv3": {"enabled": true},
+  "helmv3": {
+    "enabled": true,
+    "fileMatch": ["^charts/jellyfin/Chart\\.yaml$"]
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -16,7 +19,7 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["regex"],
+      "matchManagers": ["custom.regex"],
       "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
       "matchFileNames": ["charts/jellyfin/Chart.yaml"],
