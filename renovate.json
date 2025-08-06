@@ -5,7 +5,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^charts/jellyfin/Chart\\.yaml$/"],
+      "fileMatch": ["^charts/jellyfin/Chart\\.yaml$"],
       "matchStrings": [
         "appVersion:\\s*\"?(?<currentValue>[^\"]+)\"?\\s*#\\s*renovate:\\s*datasource=docker\\s+depName=linuxserver/jellyfin"
       ],
@@ -16,15 +16,22 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["regex", "helmv3"],
+      "matchManagers": ["regex"],
       "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
       "matchFileNames": ["charts/jellyfin/Chart.yaml"],
-      "groupName": "Update jellyfin image and bump chart version",
+      "groupName": "Update jellyfin image",
       "versioning": "docker",
+      "commitMessagePrefix": "chore(deps): ",
+      "commitMessageTopic": "Jellyfin image"
+    },
+    {
+      "matchManagers": ["helmv3"],
+      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
+      "groupName": "Bump jellyfin chart version",
       "bumpVersion": "patch",
       "commitMessagePrefix": "chore(deps): ",
-      "commitMessageTopic": "Jellyfin chart and image"
+      "commitMessageTopic": "Jellyfin chart version"
     }
   ]
 }
