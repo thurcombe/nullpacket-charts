@@ -16,12 +16,15 @@
   ],
   "packageRules": [
     {
+      "matchManagers": ["regex", "helmv3"],
       "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
       "matchFileNames": ["charts/jellyfin/Chart.yaml"],
       "groupName": "Update jellyfin image and bump chart version",
       "versioning": "docker",
-      "bumpVersion": "patch"
+      "bumpVersion": "patch",
+      "commitMessagePrefix": "chore(deps): ",
+      "commitMessageTopic": "Jellyfin chart and image"
     }
   ]
 }
