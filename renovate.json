@@ -1,14 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"],
+  "extends": [
+    "config:recommended"
+  ],
   "helmv3": {
     "enabled": true,
-    "fileMatch": ["^charts/jellyfin/Chart\\.yaml$"]
+    "managerFilePatterns": [
+      "/^charts/jellyfin/Chart\\.yaml$/"
+    ]
   },
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["^charts/jellyfin/Chart\\.yaml$"],
+      "managerFilePatterns": [
+        "/^charts/jellyfin/Chart\\.yaml$/"
+      ],
       "matchStrings": [
         "appVersion:\\s*\"?(?<currentValue>[^\"]+)\"?\\s*#\\s*renovate:\\s*datasource=docker\\s+depName=linuxserver/jellyfin"
       ],
@@ -19,18 +25,30 @@
   ],
   "packageRules": [
     {
-      "matchManagers": ["custom.regex"],
-      "matchDatasources": ["docker"],
-      "matchPackageNames": ["linuxserver/jellyfin"],
-      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "linuxserver/jellyfin"
+      ],
+      "matchFileNames": [
+        "charts/jellyfin/Chart.yaml"
+      ],
       "groupName": "Update jellyfin image",
       "versioning": "docker",
       "commitMessagePrefix": "chore(deps): ",
       "commitMessageTopic": "Jellyfin image"
     },
     {
-      "matchManagers": ["helmv3"],
-      "matchFileNames": ["charts/jellyfin/Chart.yaml"],
+      "matchManagers": [
+        "helmv3"
+      ],
+      "matchFileNames": [
+        "charts/jellyfin/Chart.yaml"
+      ],
       "groupName": "Bump jellyfin chart version",
       "bumpVersion": "patch",
       "commitMessagePrefix": "chore(deps): ",
