@@ -10,23 +10,14 @@
       "packageNameTemplate": "linuxserver/jellyfin",
       "versioningTemplate": "semver",
       "extractVersionTemplate": "{{{ currentValue }}}"
-    },
-    {
-      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
-      "matchStrings": [
-        "version:\\s?(?<currentValue>\\d+\\.\\d+\\.\\d+)"
-      ],
-      "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/jellyfin",
-      "versioningTemplate": "semver",
-      "extractVersionTemplate": "{{{ currentValue }}}"
     }
   ],
   "packageRules": [
     {
-      "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
-      "groupName": "Update jellyfin chart and app version"
+      "matchManagers": ["regex"],
+      "groupName": "Update jellyfin Docker image and chart version",
+      "postUpdateOptions": ["bumpVersion"]
     }
   ]
 }
