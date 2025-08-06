@@ -23,11 +23,12 @@
       "matchPackageNames": [
         "linuxserver/jellyfin"
       ],
-      "groupName": "Update jellyfin chart and image",
+      "groupName": "Jellyfin chart and image",
       "versioning": "docker",
       "bumpVersion": "patch",
       "commitMessagePrefix": "chore(deps): ",
-      "commitMessageTopic": "Jellyfin chart and image"
+      "commitMessageTopic": "Jellyfin chart and image",
+      "prCreation": "immediate"
     }
   ]
 }
