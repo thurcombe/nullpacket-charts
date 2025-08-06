@@ -1,31 +1,30 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base"],
+  "onboarding": false,
+  "requireConfig": "optional",
+  "helmv3": {
+    "enabled": true
+  },
   "regexManagers": [
     {
-      "fileMatch": ["^charts/jellyfin/Chart.yaml$"],
+      "fileMatch": ["^charts/jellyfin/Chart\\.yaml$"],
       "matchStrings": [
-        "appVersion:\\s*\"?(?<currentValue>.*?)\"?\\s*#\\s*renovate: datasource=docker depName=linuxserver/jellyfin versioning=semver"
+        "appVersion:\\s*\"?(?<currentValue>[^\"]+)\"?\\s*#\\s*renovate:\\s*datasource=docker\\s+depName=linuxserver/jellyfin"
       ],
       "datasourceTemplate": "docker",
-      "packageNameTemplate": "linuxserver/jellyfin",
-      "versioningTemplate": "semver",
-      "extractVersionTemplate": "{{{ currentValue }}}"
-    }
-  ],
-  "bumpVersions": [
-    {
-      "filePatterns": ["charts/jellyfin/Chart.yaml"],
-      "matchStrings": [
-        "version:\\s(?<version>\\d+\\.\\d+\\.\\d+)"
-      ],
-      "bumpType": "patch"
+      "depNameTemplate": "linuxserver/jellyfin",
+      "versioningTemplate": "docker"
     }
   ],
   "packageRules": [
     {
       "matchDatasources": ["docker"],
       "matchPackageNames": ["linuxserver/jellyfin"],
-      "groupName": "Update jellyfin image and bump chart version"
+      "matchFiles": ["charts/jellyfin/Chart.yaml"],
+      "groupName": "Update jellyfin image and bump chart version",
+      "versioning": "docker",
+      "bumpVersion": "patch"
     }
   ]
 }
