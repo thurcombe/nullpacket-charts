@@ -11,5 +11,25 @@
       "datasourceTemplate": "docker",
       "versioningTemplate": "docker"
     }
+  ],
+   "packageRules": [
+    {
+      "description": "Only treat LSIO qbittorrent app tags as updates",
+      "matchManagers": ["regex"],
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["linuxserver/qbittorrent"],
+      "registryUrls": ["https://index.docker.io"],
+
+ 
+      "extractVersion": "^v?(?<version>\\d+\\.\\d+\\.\\d+)",
+
+      "allowedTags": [
+        "^version-\\d+\\.\\d+\\.\\d+-r\\d+$",
+        "^\\d+\\.\\d+\\.\\d+-r\\d+-ls\\d+$",
+        "^\\d+\\.\\d+\\.\\d+-ls\\d+$"
+      ],
+
+      "versioning": "semver"
+    }
   ]
 }
