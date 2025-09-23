@@ -21,4 +21,4 @@ version: 0.1.4
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "1.37.0" # renovate: datasource=docker depName=linuxserver/prowlarr registryUrl=https://index.docker.io
+appVersion: "2.0.5" # renovate: datasource=docker depName=linuxserver/prowlarr registryUrl=https://index.docker.io
