@@ -3,4 +3,4 @@ name: qbittorrent
 description: deploy qbittorrent, optionally with gluetun sidecar
 type: application
 version: 0.1.10
-appVersion: "5.1.2" # renovate: datasource=docker depName=linuxserver/qbittorrent registryUrl=https://index.docker.io
+appVersion: "20.04.1" # renovate: datasource=docker depName=linuxserver/qbittorrent registryUrl=https://index.docker.io
