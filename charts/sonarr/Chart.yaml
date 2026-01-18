@@ -21,4 +21,4 @@ version: 0.1.6
 # incremented each time you make changes to the application. Versions are not expected to
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
-appVersion: "4.0.15" # renovate: datasource=docker depName=linuxserver/sonarr registryUrl=https://index.docker.io
+appVersion: "4.0.16" # renovate: datasource=docker depName=linuxserver/sonarr registryUrl=https://index.docker.io
